@@ -52,7 +52,6 @@ border:0 !important;
 input:focus{
 outline: 0 0 0 0  !important;
 box-shadow: 0 0 0 0 !important;
-
 }
 
 .remember{
@@ -86,32 +85,6 @@ color: white;
 margin-left: 4px;
 }
 
-.carousel{
-margin-top: 80px;
-}
-
-#productos{
-	width: 55%;
-}
-
-#producto1_2{
-	width: 75%;
-}
-
-.comprar_btn{
-color: black;
-background-color: #FFC312;
-width: 120px;
-}
-.comprar_btn:hover{
-color: white;
-background-color: black;
-}
-
 .img-fluid:hover{
 	transform: scale(1.008,1.008);	
-}
-
-footer{
-	background-color:#FFC312; 
 }

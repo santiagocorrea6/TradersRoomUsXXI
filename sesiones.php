@@ -1,3 +1,11 @@
+<?php session_start();
+  if(!isset($_SESSION['auth']) || $_SESSION['auth'] == false){
+    $_flag = false;
+  } else {
+    $_flag = true;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,44 +30,54 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <!-- Estilos CSS -->
+  <link rel="stylesheet" type="text/css" href="css/estilo_personas.css">
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <link rel="icon" type="imagenes/png" href="img/icono.png">
-
 </head>
 
 <body>
   <!-- MENU -->
   <div class="conteiner">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
       </button>
       
       <a class="navbar-brand" href="home.php"><img src="img/logotradersroom2.png" id="img1"></a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          
+          <li class="nav-item active">
             <a class="nav-link" href="personas.php">Personas</a>
           </li>
+            
           <li class="nav-item">
             <a class="nav-link" href="bitacora.php">Bitacora</a>
           </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="sesiones.php">Sesiones Op</a>
           </li>
         </ul>
-         
-        <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button>
-      
-        <button class="btn btn-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info2">Regístrate</button>
+        
+        <?php if ($_flag == true){ ?>
+          <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
+          </button>
+
+          <form method="get" action="control_salir.php">
+            <button type="submit" class="btn btn-light mx-1" data-toggle="modal" data-target="#modal_info2">Cerrar Sesión</button>
+        <?php }; ?>
+
+        <?php if ($_flag == false){ ?>
+          <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button>
+           
+          <button class="btn btn-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info2">Regístrate</button>
       </div>
     </nav>
   </div>
-
 
   <!-- INICIO DE SESION -->
   <div class="modal fade" id="modal_info1">
@@ -110,9 +128,9 @@
               
           <div class="card-footer">
             <div class="d-flex justify-content-center links">
-              ¿No tienes una cuenta?<a href="#" data-target="#modal_info2">Regístrate</a>
+              ¿No tienes una cuenta?<a href="#">Regístrate</a>
             </div>
-
+          
             <div class="d-flex justify-content-center">
               <a href="#">Forgot your password?</a>
             </div>
@@ -168,6 +186,15 @@
       </div>
     </div>
   </div>
+        <?php }; ?>
+      </div>
+    </nav>   
+  </div>
+        
 
-  </body>
-  </html>
+  <h1>HOLA SOY LA SESIONES OPERATIVAS</h1>
+
+
+
+</body>
+</html>
