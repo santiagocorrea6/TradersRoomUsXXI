@@ -190,21 +190,10 @@
       </div>
     </nav>   
   </div>
-        
-
-  <!-- Imagen de Fondo -->
-  <div class="container-fluid">
-    <img src="img/bg1.png" width="100%" height="100%">
-
-    <div id="boton"> 
-      <button class="btn btn-primary b1">LEARN MORE</button>
-    </div>
-  </div>
-   
-  <h1 id="colorNegro"><center><small>.</small><br>HOT NEW PRODUCTS</center><br></h1>
-   
+  
   <!-- Carrusel 1 -->  
-  <div class="container-fluid" id="fondoNegro">
+  <div class="container-fluid" id="fondoAmarillo">
+    <br>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -222,7 +211,7 @@
                 <img class="img-responsive" src="img/l1.png">
                 <div class="overlay">
                   <h2>Daniela Flores</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <a class="info" href="personas/daniela.php">Más Información</a>
                 </div>
               </div>
             </div>
@@ -233,7 +222,7 @@
                 <img class="img-responsive" src="img/l2.png">
                 <div class="overlay">
                   <h2>Yamid Prado</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <a class="info" href="personas/yamid.php">Más Información</a>
                 </div>
               </div>
             </div>
@@ -244,7 +233,7 @@
                 <img class="img-responsive" src="img/l3.png">
                 <div class="overlay">
                   <h2>Nicole Henao</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <a class="info" href="personas/nicole.php">Más Información</a>
                 </div>
               </div>
             </div>
@@ -260,7 +249,7 @@
                 <img class="img-responsive" src="img/l4.png">
                 <div class="overlay">
                   <h2>Juan David Mosquera</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <a class="info" href="personas/juandavid.php">Más Información</a>
                 </div>
               </div>
             </div>
@@ -271,7 +260,7 @@
                 <img class="img-responsive" src="img/b2.png">
                 <div class="overlay">
                   <h2>CAMERA 2</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <a class="info" href="personas/alejandro.php">Más Información</a>
                 </div>
               </div>
             </div>
@@ -282,7 +271,7 @@
                 <img class="img-responsive" src="img/l6.png">
                 <div class="overlay">
                   <h2>Juan Manuel Caicedo</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <a class="info" href="personas/juanmanuel">Más Información</a>
                 </div>
               </div>
             </div>
@@ -295,10 +284,10 @@
             <!-- IMG OVERLAY 1 -->
             <div class="col-lg-4 col-md-6">
               <div class="hovereffect">
-                <img class="img-responsive" src="img/c1.png">
+                <img class="img-responsive" src="img/l7.png">
                 <div class="overlay">
-                  <h2>TV 1</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <h2>Alejandro Bravo</h2>
+                  <a class="info" href="personas/alejandro.php">Más Información</a>
                 </div>
               </div>
             </div>
@@ -309,7 +298,7 @@
                 <img class="img-responsive" src="img/c2.png">
                 <div class="overlay">
                   <h2>TV 2</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <a class="info" href="personas/alejandro.php">Más Información</a>
                 </div>
               </div>
             </div>
@@ -317,10 +306,10 @@
             <!-- IMG OVERLAY 3 -->
             <div class="col-lg-4  d-none d-lg-block">
               <div class="hovereffect">
-                <img class="img-responsive" src="img/c3.png">
+                <img class="img-responsive" src="img/l9.png">
                 <div class="overlay">
-                  <h2>TV 3</h2>
-                  <a class="info" href="#">Más Información</a>
+                  <h2>Johan Muñoz</h2>
+                  <a class="info" href="personas/johan.php">Más Información</a>
                 </div>
               </div>
             </div>
@@ -335,17 +324,41 @@
       <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </a>
-    </div>
+    </div><br>
   </div>
 
-  <div class="container-fluid" id="fondoBlanco">
-  <br><br>
+  <!-- IMAGEN DE FONDO -->
+  <div class="container-fluid" id="fondoImagen1">
+    <div class="izq">
+      <br><br><br>
+
+      <p>Hoy puedes arrancar uno de los negocios digitales de mayor
+      <br>proyección en esta décadada.</p>
+
+      <img src="img/hr.png"><br>
+      <img src="img/entrenador.png"><br><br>
+
+      <h4>
+        <i>"La industria del conocimiento facturará 
+          <br>129 Billones de dólares en el año 2025"
+        </i>
+      </h4>
+
+      <p>Tony Robbins</p>
+
+      <br><br>
+    </div>
+  </div>
+  
+
+  <!-- Contenedor 2 -->
+  <div class="container-fluid" id="fondoNegro">
+  <br>
   
   <h1 id="colorNegro"><center>Don't miss out on great offers and new devices</center></h1>
   <hr style="border-color:black;">
 
-  <!-- Contenedor 2 -->
-  <div class="row" id="hola">
+  <div class="row">
   <!-- IZQ -->
     <div class="col-lg-3 col-md-4">
       <div class="row text-center">
@@ -377,7 +390,7 @@
     <!-- CNT-->
     <div class="col-lg-6 col-md-4">
       <div class="hovereffect">
-        <center><img class="img-responsive" src="img/p.png"></center><br><br>
+        <center><img class="img-responsive" src="img/e.jpg"></center><br><br>
         <h5>INTRODUCING 2020 QLED.</h5>
         <div class="overlay">
           <h2>Galaxy Tab</h2>
@@ -416,92 +429,57 @@
   </div>
 
   <!-- Container 3 -->
-  <div class="container-fluid">
+  <div class="container-fluid" id="fondoImagen2">
     <br><br><br>
     <div class="row">
       <div class="col-md-4 col-sm-12">
-        <center><img class="img-fluid" src="img/1.jpg"></center><br>
-        <h1>Smart Living Space</h1>
-        <p>Get more from your TV with LG ThinQ® AI, and create a smart home entertainment system commanded by voice.</p>
+        <!--center><img class="img-fluid" src="img/1.jpg"></center><br-->
+        <video src="img/testimonio1.mp4" width=768  height=512 controls class="img-fluid">
+        Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
+        La versión descargable está disponible en <a href="URL">Enlace</a>. 
+        </video>
+        <h1>¡Hola! Soy Daniel Coral, Entrenador de UsXXI</h1>
+        <p align="justify">Hola, Mi nombre es Daniel Andrés Coral, soy de la ciudad de Cali y hace aproximadamente un año que pertenezco a este sistema educativo llamado UsXXI, a lo largo de mi vida siempre había buscado un modelo que me permitiera aprender acerca los mercados financieros…</p>
 
-        <div id="boton"> 
-          <button class="btn btn-primary b1">LEARN MORE</button>
-        </div>
-
-        <hr class="d-sm-block d-md-none" style="border-color: #212529">
-      </div>
-
-      <div class="col-md-4 col-sm-12">
-        <center><img class="img-fluid" src="img/2.jpg"></center><br>
-        <h1>AMB OLED TV</h1>
-        <p>Intense color. Perfect black. Picture quality like you’ve never seen. Bring home the best: LG OLED TV.</p>
-
-        <div id="boton"> 
-          <button class="btn btn-primary b1">LEARN MORE</button>
-        </div>
+        <center>
+          <button class="btn btn-dark b1" onclick="window.location.href='personas/daniel.php'">Seguir Leyendo</button>
+        </center>
 
         <hr class="d-sm-block d-md-none" style="border-color: #212529">
       </div>
 
       <div class="col-md-4 col-sm-12">
-        <center><img class="img-fluid" src="img/3.jpg"></center><br>
-        <h1>AMB Refrigerators</h1>
-        <p>From lemonade to cocktails and more, keep things cool with LG’s exclusive slow-melting round ice.</p>
+        <!--center><img class="img-fluid" src="img/2.jpg"></center><br-->
+        <video src="img/testimonio2.mp4" width=768  height=512 controls class="img-fluid">
+        Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
+        La versión descargable está disponible en <a href="URL">Enlace</a>. 
+        </video>
+        <h1>¡Hola! &nbsp;Soy &nbsp;Juan&nbsp; David, Entrenador de UsXXI</h1>
+        <p align="justify">Hola, Soy Juan David Mosquera Lozano, Tengo 26 años de edad y hace aproximadamente 2 años decidí implementar la metodología UsXXI para tomar el control de mi vida financiera y así poderle dar tiempo de calidad a mis seres queridos especialmente a mi hija...</p>
+
+        <center>
+          <button class="btn btn-dark b1" onclick="window.location.href='personas/juandavid.php'">Seguir Leyendo</button>
+        </center>
+
+        <hr class="d-sm-block d-md-none" style="border-color: #212529">
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <!--center><img class="img-fluid" src="img/3.jpg"></center><br-->
+        <video src="img/testimonio3.mp4" width=768  height=512 controls class="img-fluid">
+        Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
+        La versión descargable está disponible en <a href="URL">Enlace</a>. 
+        </video>
+        <h1>¡Hola! Soy Yamid Prado, Cofundador de UsXXI</h1>
+        <p align="justify">Hola, soy Yamid Prado de Colombia, y soy cofundador de USXXI, te invito a aprender cómo generar ingresos en el s.XXI a través de nuestra metodología única y comprobada que te lleva paso a paso a crear y afianzar los hábitos que te permitirán vivir 100% de internet...</p>
         
-        <div id="boton"> 
-          <button class="btn btn-primary b1">LEARN MORE</button>
-        </div>
+        <center>
+          <button class="btn btn-dark b1" onclick="window.location.href='personas/yamid.php'">Seguir Leyendo</button>
+        </center>
 
-        <hr class="d-sm-block d-md-none" style="border-color: #212529">
       </div>
-    </div><br><br>
+    </div><br>
   </div>
-
-  <!-- Container 4 -->
-  <div class="container-fluid" id="fondoBlanco">
-    <br><br>
-    <hr  class="d-sm-block d-md-none">
-    <h1 id="colorNegro"><center>TV Featured Offers</center></h1>
-    <hr style="border-color:white;">
-
-    <div class="row">
-      <div class="col-lg-6 col-md-5" id="borde">
-        <a href=""><img src="img/prom1.png" class="img-fluid"></a>
-      </div>
-
-      <div class="col-lg-6 col-md-7">
-          
-        <div class="row" id="borde">
-          <div class="col-xl-6 col-lg-5" id="centro">
-            <a href=""><img src="img/prom2.png" class="img-fluid"></a>
-          </div>
-
-          <div class="col-xl-6 col-lg-7" id="centro2">
-            <a href="">LG C9 65 inch Class 4K Smart OLED TV (64.5" Diag)</a>
-            <p>★★★★★ 4.8 (1397)</p>
-            <h3>$2,199.99 <del>$3,499.99</del></h3>
-          </div> 
-        </div>
-
-        <div class="row  text-center">
-          <div class="col-lg-6 d-none d-lg-block" id="borde">
-            <a href=""><center><img src="img/prom3.png" class="img-fluid"></center></a>
-            <a href="">LG E9 65 inch Class 4K Smart OLED TV (64.5" Diag)</a>
-            <p>★★★★★ 4.7 (54)</p>
-            <h3>$2,799.99 <del>$4,299.99</del></h3>
-          </div>
-
-          <div class="col-lg-6 d-none d-lg-block" id="borde">
-            <a href=""><center><img src="img/prom4.png" class="img-fluid"></center></a>
-            <a href=""> LG C9 77 inch Class 4K Smart OLED TV (76.7" Diag)</a>
-            <p>★★★★★ 4.8 (725)</p>
-            <h3>$4,499.99 <del>$6,999.99</del></h3>
-          </div>
-        </div>
-      </div> 
-    </div>
-  </div>
-
 
 
 </body>

@@ -3,9 +3,10 @@
 
 html,body{
 
-background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
+/*background-color: black;*/
+
 }
 
 .container{
@@ -88,3 +89,4 @@ margin-left: 4px;
 .img-fluid:hover{
 	transform: scale(1.008,1.008);	
 }
+

@@ -169,5 +169,9 @@
     </div>
   </div>
 
+  <div class="container-fluid" id="fondoNegro">
+    <img src="img/inicio.png" width="100%" height="100%">
+  </div>
+
   </body>
   </html>

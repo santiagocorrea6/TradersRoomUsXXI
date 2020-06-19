@@ -30,9 +30,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <!-- Estilos CSS -->
-  <link rel="stylesheet" type="text/css" href="css/estilo_personas.css">
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo_lideres.css">
   <link rel="icon" type="imagenes/png" href="img/icono.png">
+
+  <style>
+    *{
+      border: 0px solid;
+    }
+  </style>
 </head>
 
 <body>
@@ -68,7 +74,7 @@
           </button>
 
           <form method="get" action="control_salir.php">
-            <button type="submit" class="btn btn-light mx-1" data-toggle="modal" data-target="#modal_info2">Cerrar Sesion</button>
+            <button type="submit" class="btn btn-light mx-1" data-toggle="modal" data-target="#modal_info2">Cerrar Sesión</button>
         <?php }; ?>
 
         <?php if ($_flag == false){ ?>
@@ -190,11 +196,42 @@
       </div>
     </nav>   
   </div>
-        
+  
+  <!-- PRIMERA IMAGEN -->
+  <div class="contenedor">
+    <img id="imagen" src="img/info1.jpeg">
+    <div class="centrado">
+      <p>Yamid Prado</p>
+      <h6>
+        Edad: 10<br>
+        Rango: PL5000<br>
+        Ciudad: Cali<br>
+      </h6>
+    </div>
+  </div>
 
-  <h1>HOLA SOY LA BITACORA</h1>
+  <script> 
+    function ventanaSecundaria (URL){ 
+      window.open(URL,"ventana1","width=640,height=640,scrollbars=NO") 
+    } 
+  </script>
 
+  <div class="social">
+    <a href="javascript:ventanaSecundaria('https://es-la.facebook.com/FarinaMusic/')">
+      <img src="img/facebook.png">
+    </a>
 
+    <a href="javascript:ventanaSecundaria('https://es-la.facebook.com/FarinaMusic/')">
+      <img src="img/instagram.png">
+    </a>
 
+    <a href="javascript:ventanaSecundaria('https://es-la.facebook.com/FarinaMusic/')">
+      <img src="img/twitter.png">
+    </a>
+
+    <a href="#" target="_blank">
+      <img src="img/whatsapp.png">
+    </a>
+  </div>
 </body>
 </html>

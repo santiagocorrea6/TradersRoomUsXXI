@@ -29,6 +29,7 @@
 
   <!-- Estilos CSS -->
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo_home.css">
   <link rel="icon" type="imagenes/png" href="img/icono.png">
 </head>
 
@@ -64,10 +65,28 @@
         </button>
 
         <form method="get" action="control_salir.php">
-    	  <button type="submit" class="btn btn-light mx-1" data-toggle="modal" data-target="#modal_info2">Cerrar Sesion</button>
+    	  <button type="submit" class="btn btn-light mx-1" data-toggle="modal" data-target="#modal_info2">Cerrar Sesión</button>
 		</form>
       </div>
     </nav>
+  </div>
+
+  <!------------------------------------------------------------------>
+
+  <img src="img/index.png" width="100%">
+  <!-- Imagen de Fondo -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 complete">
+        <img src="img/a2.jpg" width="100%">
+      </div>
+      <div class="col-lg-4 complete">
+        <img src="img/a3.jpg" width="100%">
+      </div>
+      <div class="col-lg-4 complete">
+        <img src="img/a1.jpg" width="100%">
+      </div>
+    </div>
   </div>
 
 </body>
