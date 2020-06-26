@@ -30,17 +30,18 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <!-- Estilos CSS -->
-  <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-  <link rel="stylesheet" type="text/css" href="../css/estilo_lideres.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo_lideres.css">
   <link rel="icon" type="imagenes/png" href="../img/icono.png">
 
   <style>
-    *{
-      border: 0px solid;
-    }
-  </style>
+      *{
+        border: 0px solid;
+      }
+    </style>
+
 </head>
 
+<!--body background="../img/fondo6.jpg"-->
 <body>
   <!-- MENU -->
   <div class="conteiner">
@@ -80,7 +81,8 @@
         <?php if ($_flag == false){ ?>
           <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button>
            
-          <button class="btn btn-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info2">Regístrate</button>
+          <button class="btn btn-light mx-1 " onclick="location.href='../registro.php'" type="button">
+         Regístrate</button>
       </div>
     </nav>
   </div>
@@ -99,7 +101,7 @@
             </div>
           </div>
           <div class="card-body">
-            <form action="control_sesion.php" method="POST">
+            <form action="../consulta.php" method="POST">
               <?php
                 if(isset($_GET['error']) && $_GET['error']==true){
                   print("<h4>Error: Nombre de usuario o contraseña invalidos</h4>");
@@ -111,7 +113,7 @@
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
     
-                <input type="text" class="form-control" placeholder="usuario" name="usuario">
+                <input type="text" class="form-control" placeholder="usuario" name="nombre">
             </div>
                   
             <div class="input-group form-group">
@@ -134,7 +136,7 @@
               
           <div class="card-footer">
             <div class="d-flex justify-content-center links">
-              ¿No tienes una cuenta?<a href="#">Regístrate</a>
+              ¿No tienes una cuenta?<a href="../registro.php">Regístrate</a>
             </div>
           
             <div class="d-flex justify-content-center">
@@ -146,70 +148,55 @@
     </div>
   </div>
 
-  <!-- REGÍSTRATE -->
-  <div class="modal fade" id="modal_info2">
-    <div class="container">
-      <div class="d-flex justify-content-center h-100" style="padding-top: 100px">
-        <div class="card" style="width: 40%">
-          <div class="card-header">
-            <h3>Regístrate</h3>
-    
-            <div class="d-flex justify-content-end social_icon">
-              <span><i class="fab fa-facebook-square"></i></span>
-              <span><i class="fab fa-google-plus-square"></i></span>
-              <span><i class="fab fa-twitter-square"></i></span>
-            </div>
-          </div>
-    
-          <div class="card-body">
-            <form>
-              <div class="input-group form-group">  
-                <input type="text" class="form-control" placeholder="Nombre"> 
-              </div>
-
-              <div class="input-group form-group">  
-                <input type="text" class="form-control" placeholder="Apellido"> 
-              </div>
-    
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Correo electrónico">
-              </div>
-
-              <div class="input-group form-group">
-                <input type="password" class="form-control" placeholder="Contraseña">
-              </div>
-    
-              <div class="input-group form-group">
-                <input type="password" class="form-control" placeholder="Confirmar contraseña">
-              </div>
-
-              <div class="form-group">
-                <input type="submit" value="Regístrate" class="btn float-right login_btn">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
         <?php }; ?>
       </div>
     </nav>   
   </div>
   
   <!-- PRIMERA IMAGEN -->
-  <div class="contenedor">
-    <img id="imagen" src="../img/info1.jpeg">
-    <div class="centrado">
-      <p id="verde">Yamid Prado</p>
-      <h6>
-        Edad: 10<br>
-        Rango: PL5000<br>
-        Ciudad: Cali<br>
-      </h6>
+  <img class="imagen" src="../img/info1.jpeg" width="100%">
+
+  <div class="container" id="top">
+    <div class="row">
+      <div class="col-lg-1 col-md-0"></div>
+      <div class="col-lg-10 col-md-12" id="verde"><h1>YAMID PRADO</h1></div>
+      <div class="col-lg-1 col-md-0"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-1 col-md-0"></div>
+      
+      <div class="col-lg-4 col-md-5" id="fondoBlanco">
+        <div class="contenedor">
+          <img src="../img/l2.png">
+          <div class="centrado">
+            <div class="row">
+              <div class="col-sm-6" id="der">
+                <br>
+                <p>ROL: <br>EDAD: <br>RANGO: <br>CIUDAD: </p>
+              </div>
+              
+              <div class="col-sm-6" id="izq">
+                <br>
+                <p> Lider<br> 31 años<br> PL 5000<br> Cali - Colombia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6 col-md-7" id="fondoBlanco">
+        <p class="parrafo">Hola, soy Yamid Prado de Colombia, y soy cofundador de USXXI, te invito a aprender cómo generar ingresos a través de nuestra metodología única y comprobada que te lleva paso a paso a crear y afianzar los hábitos que te permitirán vivir 100% de internet.</p>
+
+        <video src="../img/testimonio3.mp4" controls>
+      </div>
+
+      <div class="col-lg-1 col-md-0"></div>
     </div>
   </div>
 
+
+  
   <!-- Abrir ventana emergente -->
   <script> 
     function ventanaSecundaria (URL){ 
@@ -217,7 +204,7 @@
     } 
   </script>
 
-  <!-- Redes Sociales -->
+  <!--Redes Sociales-->
   <div class="social">
     <a href="javascript:ventanaSecundaria('https://es-la.facebook.com/FarinaMusic/')">
       <img src="../img/facebook.png">

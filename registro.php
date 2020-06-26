@@ -1,15 +1,8 @@
-<?php session_start();
-  if(!isset($_SESSION['auth']) || $_SESSION['auth'] == false){
-    $_flag = false;
-  } else {
-    $_flag = true;
-  }
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>TradersRoomUsXXI</title>
+	<title>Registro</title>
+
 
   <!-- Meta tags -->
   <meta charset="utf-8">
@@ -30,55 +23,43 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <!-- Estilos CSS -->
-  <link rel="stylesheet" type="text/css" href="css/estilo_personas.css">
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <link rel="icon" type="imagenes/png" href="img/icono.png">
-</head>
 
-<body>
-  <!-- MENU -->
-  <div class="conteiner">
+</head>
+<body background="img/fondo6.jpg">
+	<div class="conteiner">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
       
       <a class="navbar-brand" href="home.php"><img src="img/logotradersroom2.png" id="img1"></a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
           </li>
-          
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="personas.php">Personas</a>
           </li>
-            
           <li class="nav-item">
             <a class="nav-link" href="bitacora.php">Bitacora</a>
           </li>
-          
           <li class="nav-item">
             <a class="nav-link" href="sesiones.php">Sesiones Op</a>
           </li>
         </ul>
-        
-        <?php if ($_flag == true){ ?>
-          <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
-          </button>
-
-          <form method="get" action="control_salir.php">
-            <button type="submit" class="btn btn-light mx-1" data-toggle="modal" data-target="#modal_info2">Cerrar Sesión</button>
-        <?php }; ?>
-
-        <?php if ($_flag == false){ ?>
-          <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button>
-           
-          <button class="btn btn-light mx-1 " onclick="location.href='registro.php'" type="button">
+         
+        <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button>
+      
+      	<button class="btn btn-light mx-1 " onclick="location.href='registro.php'" type="button">
          Regístrate</button>
       </div>
     </nav>
   </div>
+
 
   <!-- INICIO DE SESION -->
   <div class="modal fade" id="modal_info1">
@@ -94,19 +75,15 @@
             </div>
           </div>
           <div class="card-body">
-            <form action="consulta.php" method="POST">
-              <?php
-                if(isset($_GET['error']) && $_GET['error']==true){
-                  print("<h4>Error: Nombre de usuario o contraseña invalidos</h4>");
-                } 
-              ?>
+              <form action="personas.php" method="post">
+        
     
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
-    
-                <input type="text" class="form-control" placeholder="usuario" name="nombre">
+              
+              <input type="text" class="form-control" placeholder="usuario" name="nombre">
             </div>
                   
             <div class="input-group form-group">
@@ -122,7 +99,7 @@
             </div>
             
             <div class="form-group">
-              <input type="submit" value="Iniciar sesión" class="btn float-right login_btn" name="enviar">
+               <input type="submit" value="Iniciar sesión" class="btn float-right login_btn" name="login">
             </div>
             </form>
           </div>
@@ -131,7 +108,7 @@
             <div class="d-flex justify-content-center links">
               ¿No tienes una cuenta?<a href="registro.php">Regístrate</a>
             </div>
-          
+
             <div class="d-flex justify-content-center">
               <a href="#">Forgot your password?</a>
             </div>
@@ -141,15 +118,49 @@
     </div>
   </div>
 
-        <?php }; ?>
+    <div class="container">
+      <div class="d-flex justify-content-center h-100" style="padding-top: 100px">
+        <div class="card" style="width: 40%">
+          <div class="card-header">
+            <h3>Regístrate</h3>
+    
+            <div class="d-flex justify-content-end social_icon">
+              <span><i class="fab fa-facebook-square"></i></span>
+              <span><i class="fab fa-google-plus-square"></i></span>
+              <span><i class="fab fa-twitter-square"></i></span>
+            </div>
+          </div>
+    
+          <div class="card-body">
+            <form action="consulta_registro.php" method="post">
+              <div class="input-group form-group">  
+                <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>  
+              </div>
+
+              <div class="input-group form-group">  
+                <input type="text" class="form-control" placeholder="Apellido" name="apellido" required> 
+              </div>
+    
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Correo electrónico" name="correo" required>
+              </div>
+
+              <div class="input-group form-group">
+                <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" required>
+              </div>
+    
+              <div class="input-group form-group">
+                <input type="password" class="form-control" placeholder="Confirmar contraseña" name="contrasena2" required>
+              </div>
+
+              <div class="form-group">
+                <input type="submit" value="Regístrate" class="btn float-right login_btn">
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </nav>   
-  </div>
-        
-
-  <h1>HOLA SOY LA SESIONES OPERATIVAS</h1>
-
-
+    </div>
 
 </body>
 </html>

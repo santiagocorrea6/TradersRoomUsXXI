@@ -74,7 +74,8 @@
         <?php if ($_flag == false){ ?>
           <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button>
            
-          <button class="btn btn-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info2">Regístrate</button>
+          <button class="btn btn-light mx-1 " onclick="location.href='registro.php'" type="button">
+         Regístrate</button>
       </div>
     </nav>
   </div>
@@ -93,7 +94,7 @@
             </div>
           </div>
           <div class="card-body">
-            <form action="control_sesion.php" method="POST">
+            <form action="consulta.php" method="POST">
               <?php
                 if(isset($_GET['error']) && $_GET['error']==true){
                   print("<h4>Error: Nombre de usuario o contraseña invalidos</h4>");
@@ -105,7 +106,7 @@
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
     
-                <input type="text" class="form-control" placeholder="usuario" name="usuario">
+                <input type="text" class="form-control" placeholder="usuario" name="nombre">
             </div>
                   
             <div class="input-group form-group">
@@ -128,7 +129,7 @@
               
           <div class="card-footer">
             <div class="d-flex justify-content-center links">
-              ¿No tienes una cuenta?<a href="#">Regístrate</a>
+              ¿No tienes una cuenta?<a href="registro.php">Regístrate</a>
             </div>
           
             <div class="d-flex justify-content-center">
@@ -140,52 +141,6 @@
     </div>
   </div>
 
-  <!-- REGÍSTRATE -->
-  <div class="modal fade" id="modal_info2">
-    <div class="container">
-      <div class="d-flex justify-content-center h-100" style="padding-top: 100px">
-        <div class="card" style="width: 40%">
-          <div class="card-header">
-            <h3>Regístrate</h3>
-    
-            <div class="d-flex justify-content-end social_icon">
-              <span><i class="fab fa-facebook-square"></i></span>
-              <span><i class="fab fa-google-plus-square"></i></span>
-              <span><i class="fab fa-twitter-square"></i></span>
-            </div>
-          </div>
-    
-          <div class="card-body">
-            <form>
-              <div class="input-group form-group">  
-                <input type="text" class="form-control" placeholder="Nombre"> 
-              </div>
-
-              <div class="input-group form-group">  
-                <input type="text" class="form-control" placeholder="Apellido"> 
-              </div>
-    
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Correo electrónico">
-              </div>
-
-              <div class="input-group form-group">
-                <input type="password" class="form-control" placeholder="Contraseña">
-              </div>
-    
-              <div class="input-group form-group">
-                <input type="password" class="form-control" placeholder="Confirmar contraseña">
-              </div>
-
-              <div class="form-group">
-                <input type="submit" value="Regístrate" class="btn float-right login_btn">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
         <?php }; ?>
       </div>
     </nav>   
