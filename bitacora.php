@@ -178,7 +178,25 @@
       
       <div class="col-md-4">
         <h2 id="uno">Capital Inicial</h2><br>
-        <h2 id="dos">100 $ </h2>
+        <h2 id="dos">
+          <?php
+            $a = $_SESSION['user'];
+            $conexion = mysqli_connect('localhost','root','','sesion');
+            $sql = "SELECT capital from usuarios WHERE name = '$a'";
+            $result = mysqli_query($conexion,$sql);
+            $result = mysqli_fetch_array($result);
+            $capital_inicial = $result['capital'];
+
+            if ($capital_inicial == 0) { 
+              ?> 
+              <button class="login_btn" type="button" data-toggle="modal" data-target="#modal_info3" id="btnAgregarCapital">Añadir</button>
+
+              <?php
+            } else { 
+              echo $capital_inicial;?>$<?php
+            }
+          ?>
+        </h2>
       </div>      
     </div>
 
@@ -192,6 +210,7 @@
             <th scope="col">Inversion</th>
             <th scope="col">Rentabilidad</th>
             <th scope="col">Resultado</th>
+            <th scope="col">Ganancia</th>
             <th scope="col">Capital Total</th>
             <th scope="col">Observaciones</th>
           </tr>
@@ -211,6 +230,7 @@
             <td><?php echo $mostrar['inversion']?>$</td>
             <td><?php echo $mostrar['rentabilidad']?>%</td>
             <td><?php echo $mostrar['resultado']?></td>
+            <td><?php echo $mostrar['ganancia']?>$</td>
             <td><?php echo $mostrar['capital']?>$</td>
             <td><?php echo $mostrar['observaciones']?></td>
           </tr>            
@@ -223,7 +243,21 @@
     </div>
 
     <div class="form-group">
-      <button class="float-right login_btn mx-1" type="button" data-toggle="modal" data-target="#modal_info2">Agregar</button>
+      <?php  
+        $nombre = $_SESSION['user'];
+        $conexion = mysqli_connect('localhost','root','','sesion');
+        $sql = "SELECT capital from usuarios WHERE name = '$nombre'";
+        $result = mysqli_query($conexion,$sql);
+        $result = mysqli_fetch_array($result);
+        $capital_inicial = $result['capital'];
+
+        if ($capital_inicial == 0) { ?>
+          <button class="login_btn mx-1" type="button" data-toggle="modal" data-target="#modal_info3" id="btn_agregar">Agregar</button> <?php
+        } else { ?>
+          <button class="login_btn mx-1" type="button" data-toggle="modal" data-target="#modal_info2" id="btn_agregar">Agregar</button> <?php
+        }
+      ?>
+      
     </div>
   </div>
 
@@ -232,6 +266,7 @@
       <div class="d-flex justify-content-center h-100" style="padding-top: 100px">
         <div class="card" style="width: 40%; height: 100%;">
           <div class="card-header">
+            <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='bitacora.php'">&times;</button>
             <h3>Registrar Evento</h3>
           </div>
       
@@ -243,7 +278,7 @@
               <div class="form-group row">
                 <label class="col-sm-4 col-form-label" style="color:#FFFFFF";>Fecha:</label>
                 <div class="col-sm-8">
-                  <input type="date" class="form-control" name="fecha" placeholder="">
+                  <input type="date" class="form-control" name="fecha" placeholder="" required>
                 </div>
               </div>
 
@@ -251,7 +286,7 @@
               <div class="form-group row">
                 <label class="col-sm-4 col-form-label" style="color:#FFFFFF";>Paridad:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" name="paridad" placeholder="EUR/USD">
+                  <input type="text" class="form-control" name="paridad" placeholder="EUR/USD" required>
                 </div>
               </div>
 
@@ -259,7 +294,7 @@
               <div class="form-group row">
                 <label class="col-sm-4 col-form-label" style="color:#FFFFFF";>Inversion:</label>
                 <div class="col-sm-8">
-                  <input type="number" class="form-control" name="inversion" placeholder="USD" min="1" step="0.1">
+                  <input type="number" class="form-control" name="inversion" placeholder="USD" min="1" step="0.1" required>
                 </div>
               </div>
 
@@ -267,21 +302,11 @@
               <div class="form-group row">
                 <label class="col-sm-4 col-form-label" style="color:#FFFFFF";>Rentabilidad:</label>
                 <div class="col-sm-8">
-                  <input type="number" class="form-control" name="rentabilidad" placeholder="Porcentaje" min="1" max="100">
+                  <input type="number" class="form-control" name="rentabilidad" placeholder="Porcentaje" min="1" max="100" required>
                 </div>
               </div>
 
               <!-- Resultado -->
-              <!--div class="form-group row">
-                <div class="col-sm-4" style="color:#FFFFFF";>Resultado:</div>
-                <div class="col-sm-8">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="resultado">
-                    <label class="form-check-label" style="color:#FFFFFF";> Ganada</label>
-                  </div>
-                </div>
-              </div-->
-
               <div class="form-group row">
                 <div class="col-sm-4" style="color:#FFFFFF";>Resultado:</div>
                 <div class="col-sm-8">
@@ -303,14 +328,33 @@
               <div class="form-group">
                 <input type="submit" value="Guardar" class="btn float-right login_btn" name="guardar">
               </div>
-          </form>
-
-
+            </form>
           </div>
         </div>
       </div>
     </div>          
   </div>
+
+  <div class="modal fade" id="modal_info3">
+    <div class="container">
+      <div class="d-flex justify-content-center h-100" style="padding-top: 150px">
+        <div class="card" style="width: 22%; height: 80%;">    
+          <div class="card-header">
+            <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='bitacora.php'">&times;</button>
+            <h3>Capital inicial</h3>
+          </div>  
+          <div class="card-body">
+            <form action="consulta_bitacora.php" method="post">
+              <center>
+                <input type="number" class="form-control" name="capital" placeholder="USD" min="1" step="0.1" required style="width : 70%"; >
+                
+                <input type="submit" value="GUARDAR" class="btn float-right login_btn" name="guardar_capital" id="boton_capital">
+              </center>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>    
 
 
   <?php }; ?>

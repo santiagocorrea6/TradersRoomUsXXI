@@ -31,7 +31,7 @@
 		$_SESSION['user'] = $nombre;
 		$_SESSION['auth'] = true;
 
-		$consulta = "CREATE TABLE $nombre (id INT(4), fecha VARCHAR(20), paridad VARCHAR(10), inversion INT(20), rentabilidad INT(5), resultado VARCHAR(10), capital INT(30), observaciones VARCHAR(30))";
+		$consulta = "CREATE TABLE $nombre (id INT(4), fecha VARCHAR(20), paridad VARCHAR(10), inversion INT(20), rentabilidad INT(5), resultado VARCHAR(10), ganancia VARCHAR(10), capital VARCHAR(30), observaciones VARCHAR(30))";
 
 		mysqli_query($conexion, $consulta);
 
