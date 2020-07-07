@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +28,8 @@
 
 </head>
 
-<body>
+<body background="img/fondo6.jpg">
 
-  
   <!-- MENU -->
   <div class="conteiner">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black">
@@ -59,77 +59,78 @@
       
         <button class="btn btn-light mx-1 " onclick="location.href='registro.php'" type="button">
          Regístrate</button>
-
       </div>
     </nav>
   </div>
 
+  <div class="container">
+    <div class="d-flex justify-content-center h-100" style="padding-top: 100px">
+      <div class="card" style="width: 40%">
+        <div class="card-header">
+          <h3>Iniciar sesión</h3>
+          <p class="text-danger" style="margin-bottom: 0px; margin-top: 0px;">
+              <?php
+                if (!empty($_SESSION)) {
+                  if ($_SESSION['userName'] == 0) {
+                    echo "Por favor ingrese el correo";
+                    session_destroy();
+                  } else if ($_SESSION['userName'] == 1) {
+                    echo "Por favor ingrese la contraseña";
+                    session_destroy();
+                  } else if ($_SESSION['userName'] == 2) {
+                    echo "Usuario o contraseña incorrectas";
+                    session_destroy();
+                  } /*else if ($_SESSION['userName'] == 3) {
+                    echo "Contraseña incorrecta";
+                  }*/
+                }
+              ?>
+            </p>
 
-
-
-  <!-- INICIO DE SESION -->
-  <div class="modal fade" id="modal_info1">
-    <div class="container">
-      <div class="d-flex justify-content-center h-100">
-        <div class="card" style="width: 40%">
-          <div class="card-header">
-
-            <h3>Iniciar sesión</h3>
-            <div class="d-flex justify-content-end social_icon">
-              <span><i class="fab fa-facebook-square"></i></span>
-              <span><i class="fab fa-google-plus-square"></i></span>
-              <span><i class="fab fa-twitter-square"></i></span>
-            </div>
+          <div class="d-flex justify-content-end social_icon">
+            <span><i class="fab fa-facebook-square"></i></span>
+            <span><i class="fab fa-google-plus-square"></i></span>
+            <span><i class="fab fa-twitter-square"></i></span>
           </div>
-          <div class="card-body">
-              <form action="consulta.php" method="post">
-        
-    
+        </div>
+      
+        <div class="card-body">
+          <form action="consulta.php" method="post">
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
-    
-                <input type="email" class="form-control" placeholder="correo" name="nombre">
+      
+              <input type="email" class="form-control" placeholder="Correo" name="nombre">
             </div>
-                  
+                    
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
-              
-              <input type="password" class="form-control" placeholder="contraseña" name="contrasena">
+               
+              <input type="password" class="form-control" placeholder="Contraseña" name="contrasena">
             </div>
-            
+              
             <div class="row align-items-center remember ml-1">
               <input type="checkbox">Recordarme
             </div>
-            
-            <div class="form-group">
-               <input type="submit" value="Iniciar sesión" class="btn float-right login_btn" name="login">
-            </div>
-            </form>
-          </div>
               
-          <div class="card-footer">
-            <div class="d-flex justify-content-center links">
-              ¿No tienes una cuenta?<a href="registro.php">Regístrate</a>
+            <div class="form-group">
+              <input type="submit" value="Iniciar sesión" class="btn float-right login_btn" name="login">
             </div>
+          </form>
+        </div>
+              
+        <div class="card-footer">
+          <div class="d-flex justify-content-center links">
+            ¿No tienes una cuenta?<a href="registro.php">Regístrate</a>
+          </div>
 
-            <div class="d-flex justify-content-center">
-              <a href="#">Forgot your password?</a>
-            </div>
+          <div class="d-flex justify-content-center">
+            <a href="#">Forgot your password?</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="container-fluid" id="fondoNegro">
-    <img src="img/inicio.png" width="100%" height="100%">
-  </div>
-
-
-
-  </body>
-  </html>

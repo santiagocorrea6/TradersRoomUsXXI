@@ -69,7 +69,7 @@
         </ul>
         
         <?php if ($_flag == true){ ?>
-          <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
+          <button class="btn btn-outline-light mx-1 " type="button" onclick="location.href='perfil.php'"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
           </button>
 
           <form method="get" action="control_salir.php">
@@ -111,7 +111,7 @@
                   <span class="input-group-text"><i class="fas fa-user"></i></span>
                 </div>
       
-                <input type="text" class="form-control" placeholder="usuario" name="nombre">
+                <input type="email" class="form-control" placeholder="correo" name="nombre">
               </div>
                     
               <div class="input-group form-group">
@@ -153,11 +153,25 @@
 
   <!-- BODY -->
   <br><br><br>
-  <?php if ($_flag == false){ ?>
-    <h1 style="color:#FFFFFF";>Solo para usuarios registrados</h1>
-    <h3 style="color:#FFFFFF";>Por favor inicie sesion o <a href="registro.php">registrese</a></h3>
-  <?php } else { 
-    $conexion = mysqli_connect('localhost','root','','sesion');
+  <?php
+    if ($_flag == false) { 
+  ?>
+    
+    <div class="card" id="card_registro">
+      <img class="card-img-top" src="img/icono.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-text">El recurso seleccionado, sólo se encuentra disponible para usuarios registrados.</h5>
+      </div>
+
+      <div class="card-body">
+        <a href="index_error.php" class="text-light card-link float-left">Iniciar sesión</a> 
+        <a href="registro.php" class="card-link float-right text-warning">Registrarse</a>
+      </div>
+    </div>
+
+  <?php 
+    } else { 
+      $conexion = mysqli_connect('localhost','root','','sesion');
   ?>
     
   <div class="container">
@@ -180,9 +194,11 @@
         <h2 id="uno">Capital Inicial</h2><br>
         <h2 id="dos">
           <?php
-            $a = $_SESSION['user'];
+            //$a = $_SESSION['user'];
+            $a = $_SESSION['userName'];
             $conexion = mysqli_connect('localhost','root','','sesion');
-            $sql = "SELECT capital from usuarios WHERE name = '$a'";
+            //$sql = "SELECT capital from usuarios WHERE name = '$a'";
+            $sql = "SELECT capital from usuarios WHERE user = '$a'";
             $result = mysqli_query($conexion,$sql);
             $result = mysqli_fetch_array($result);
             $capital_inicial = $result['capital'];
@@ -217,7 +233,8 @@
         </thead>
         <tbody>
           <?php 
-            $a = $_SESSION['user'];
+            //$a = $_SESSION['user'];
+            $a = $_SESSION['userName'];
             $sql="SELECT * from $a";
             $result=mysqli_query($conexion,$sql);
 
@@ -244,17 +261,18 @@
 
     <div class="form-group">
       <?php  
-        $nombre = $_SESSION['user'];
+        $correo = $_SESSION['userName'];
         $conexion = mysqli_connect('localhost','root','','sesion');
-        $sql = "SELECT capital from usuarios WHERE name = '$nombre'";
+        $sql = "SELECT capital from usuarios WHERE user = '$correo'";
         $result = mysqli_query($conexion,$sql);
         $result = mysqli_fetch_array($result);
         $capital_inicial = $result['capital'];
 
         if ($capital_inicial == 0) { ?>
-          <button class="login_btn mx-1" type="button" data-toggle="modal" data-target="#modal_info3" id="btn_agregar">Agregar</button> <?php
+          <button class="login_btn mx-1" type="button" data-toggle="modal" data-target="#modal_info3" id="btn_agregar" style="left: 91.5%">Agregar</button> <?php
         } else { ?>
-          <button class="login_btn mx-1" type="button" data-toggle="modal" data-target="#modal_info2" id="btn_agregar">Agregar</button> <?php
+          <button class="login_btn mx-1" type="button" data-toggle="modal" data-target="#modal_info2" id="btn_agregar">Agregar</button>
+          <button class="login_btn mx-1 btn-secondary" type="button" data-toggle="modal" data-target="#eliminar" id="btn_agregar">Eliminar</button> <?php
         }
       ?>
       
@@ -267,7 +285,7 @@
         <div class="card" style="width: 40%; height: 100%;">
           <div class="card-header">
             <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='bitacora.php'">&times;</button>
-            <h3>Registrar Evento</h3>
+            <h3>Registrar Operación</h3>
           </div>
       
           <div class="card-body">
@@ -286,7 +304,18 @@
               <div class="form-group row">
                 <label class="col-sm-4 col-form-label" style="color:#FFFFFF";>Paridad:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" name="paridad" placeholder="EUR/USD" required>
+                  <select class="form-control" name="paridad">
+                    <option>EUR/USD</option>
+                    <option>GBP/USD</option>
+                    <option>USD/JPY</option>
+                    <option>USD/CAD</option>
+                    <option>USD/CHF</option>
+                    <option>AUD/USD</option>
+                    <option>NZD/USD</option>
+                    <option>EUR/GBP</option>
+                    <option>GBP/JPY</option>
+                    <option>EUR/JPY</option>
+                  </select>
                 </div>
               </div>
 
@@ -346,7 +375,7 @@
           <div class="card-body">
             <form action="consulta_bitacora.php" method="post">
               <center>
-                <input type="number" class="form-control" name="capital" placeholder="USD" min="1" step="0.1" required style="width : 70%"; >
+                <input type="number" class="form-control" name="capital" placeholder="USD" min="1" step="1" required style="width : 70%"; >
                 
                 <input type="submit" value="GUARDAR" class="btn float-right login_btn" name="guardar_capital" id="boton_capital">
               </center>
@@ -354,11 +383,33 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
+  </div>
+
+  <div class="modal fade" id="eliminar">
+    <div class="container">
+      <div class="d-flex justify-content-center h-100" style="padding-top: 150px">
+        <div class="card" style="width: 22%; height: 80%;">    
+          <div class="card-header">
+            <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='bitacora.php'">&times;</button>
+            <h3>Eliminar fila</h3>
+          </div>  
+          <div class="card-body">
+            <form action="consulta_bitacora.php" method="post">
+              <center>
+                <input type="number" class="form-control" name="fila" placeholder="ID" min="1" step="0.1" required style="width : 70%"; >
+                
+                <input type="submit" value="ELIMINAR" class="btn float-right login_btn" name="eliminar" id="boton_capital">
+              </center>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>   
 
 
   <?php }; ?>
-  
   
 </body>
 </html>

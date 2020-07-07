@@ -32,9 +32,7 @@ body{
 }
 
 #fondoAmarillo, .fondoAmarillo{
-  background-color: #DBD800;
-  /*background-image: url('../img/fondoa.jpg');*/
-
+  background-color: #FFF800;
 }
 
 .izq{
@@ -49,7 +47,7 @@ li a, h5{
   color: black;
   width: 40%;
   height: 10%;
-  background: #DBD800;
+  background: #FFF800;
 }
 
 .img-responsive{

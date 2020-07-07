@@ -5,7 +5,7 @@ body{
 
 #amarillo{
 	margin-bottom: -1%;
-	background-color: yellow;
+	background-color: #FFF800;
 }
 
 .table-responsive{
@@ -41,6 +41,7 @@ td, tr{
 	width: 100%;
 	color: black;	
 	position: relative;
+	background-color: yellow;
 }
 
 #btnAgregarCapital{
@@ -49,31 +50,52 @@ td, tr{
 	border-radius: 10px;
 	width: 40%;
 	top: 10px;
+	background-color: #FFF800;
+}
+
+.btn-secondary{
+	margin-left: -0.5% !important;
 }
 
 #btn_agregar{
-	left: 88.7%;
+	left: 83%;
+	width: 8%;
 	height: 40px;
 	position: relative;
 	border-radius: 10px;
+	background-color: #FFF800;
 }
 
-.close{
-	color: yellow;
+.btn-secondary{
+	background-color: grey !important;
+}
+
+.close, .text-warning{
+	color: #FFF800 !important;
+}
+
+#card_registro{
+	margin: auto;
+	width: 18rem;
+	height: 25rem;
+	color: #484848;
+	position: relative;
+	text-align: justify;
 }
 /* BARRA DE NAVEGACION */
+
 .card{
 height: 370px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
-background-color: rgba(0,0,0,0.9) !important;
+background-color: rgba(0,0,0,0.7) !important;
 }
 
 .social_icon span{
 font-size: 60px;
 margin-left: 10px;
-color: #FFC312;
+color: #FFF800;
 }
 
 .social_icon span:hover{
@@ -93,7 +115,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color: #FFF800;
 color: black;
 border:0 !important;
 }
@@ -117,7 +139,7 @@ margin-right: 5px;
 
 .login_btn{
 color: black;
-background-color: #FFC312;
+background-color: #FFF800;
 width: 120px;
 }
 

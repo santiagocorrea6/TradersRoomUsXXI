@@ -1,3 +1,11 @@
+<?php session_start();
+  if(!isset($_SESSION['auth']) || $_SESSION['auth'] == false){
+    $_flag = false;
+    //header("Location: index.php");
+  } else {
+    $_flag = true;
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +60,8 @@
           </li>
         </ul>
          
-        <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button>
+        <!--button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button-->
+        <button class="btn btn-outline-light mx-1 " type="button" onclick="location.href='index_error.php'">Iniciar sesión</button>
       
       	<button class="btn btn-light mx-1 " onclick="location.href='registro.php'" type="button">
          Regístrate</button>
@@ -75,7 +84,7 @@
             </div>
           </div>
           <div class="card-body">
-              <form action="personas.php" method="post">
+              <form action="consulta.php" method="post">
         
     
             <div class="input-group form-group">
@@ -83,7 +92,7 @@
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
               
-              <input type="text" class="form-control" placeholder="usuario" name="nombre">
+              <input type="email" class="form-control" placeholder="correo" name="nombre">
             </div>
                   
             <div class="input-group form-group">
@@ -123,6 +132,20 @@
         <div class="card" style="width: 40%">
           <div class="card-header">
             <h3>Regístrate</h3>
+            <p class="text-danger" style="margin-bottom: -30px; margin-top: -10px;">
+              <?php
+                if (!empty($_SESSION)) {
+                  if ($_SESSION['userName'] == "correo") {
+                    echo "La cuenta ya existe.";
+                    session_destroy();
+                  } else if ($_SESSION['userName'] == "contrasena") {
+                    echo "Las contraseñas no coinciden.";
+                    session_destroy();
+                  } 
+                }
+              ?>
+            </p>
+
     
             <div class="d-flex justify-content-end social_icon">
               <span><i class="fab fa-facebook-square"></i></span>
@@ -152,7 +175,7 @@
               <div class="input-group form-group">
                 <input type="password" class="form-control" placeholder="Confirmar contraseña" name="contrasena2" required>
               </div>
-
+              
               <div class="form-group">
                 <input type="submit" value="Regístrate" class="btn float-right login_btn">
               </div>

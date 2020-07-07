@@ -61,7 +61,7 @@
           </li>
         </ul>
 
-        <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1"><img src="img/user.png">&nbsp;&nbsp;<?php print(ucfirst($_SESSION['user']));?>
+        <button class="btn btn-outline-light mx-1 " type="button" onclick="location.href='perfil.php'"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
         </button>
 
         <form method="get" action="control_salir.php">

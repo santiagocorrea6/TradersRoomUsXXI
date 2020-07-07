@@ -64,7 +64,7 @@
         </ul>
         
         <?php if ($_flag == true){ ?>
-          <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
+          <button class="btn btn-outline-light mx-1 " type="button" onclick="location.href='perfil.php'"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
           </button>
 
           <form method="get" action="control_salir.php">
@@ -106,7 +106,7 @@
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
     
-                <input type="text" class="form-control" placeholder="usuario" name="nombre">
+                <input type="email" class="form-control" placeholder="correo" name="nombre">
             </div>
                   
             <div class="input-group form-group">
@@ -388,7 +388,6 @@
     <br><br><br>
     <div class="row">
       <div class="col-md-4 col-sm-12">
-        <!--center><img class="img-fluid" src="img/1.jpg"></center><br-->
         <video src="img/testimonio1.mp4" width=768  height=512 controls class="img-fluid">
         Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
         La versión descargable está disponible en <a href="URL">Enlace</a>. 
@@ -404,7 +403,6 @@
       </div>
 
       <div class="col-md-4 col-sm-12">
-        <!--center><img class="img-fluid" src="img/2.jpg"></center><br-->
         <video src="img/testimonio2.mp4" width=768  height=512 controls class="img-fluid">
         Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
         La versión descargable está disponible en <a href="URL">Enlace</a>. 
@@ -420,7 +418,6 @@
       </div>
 
       <div class="col-md-4 col-sm-12">
-        <!--center><img class="img-fluid" src="img/3.jpg"></center><br-->
         <video src="img/testimonio3.mp4" width=768  height=512 controls class="img-fluid">
         Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
         La versión descargable está disponible en <a href="URL">Enlace</a>. 

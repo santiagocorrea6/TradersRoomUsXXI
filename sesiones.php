@@ -50,7 +50,7 @@
             <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
           </li>
           
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="personas.php">Personas</a>
           </li>
             
@@ -58,13 +58,13 @@
             <a class="nav-link" href="bitacora.php">Bitacora</a>
           </li>
           
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="sesiones.php">Sesiones Op</a>
           </li>
         </ul>
         
         <?php if ($_flag == true){ ?>
-          <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
+          <button class="btn btn-outline-light mx-1 " type="button" onclick="location.href='perfil.php'"><img src="img/user.png">&nbsp;<?php print(ucfirst ($_SESSION['user']));?>
           </button>
 
           <form method="get" action="control_salir.php">
@@ -106,7 +106,7 @@
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
     
-                <input type="text" class="form-control" placeholder="usuario" name="nombre">
+                <input type="email" class="form-control" placeholder="correo" name="nombre">
             </div>
                   
             <div class="input-group form-group">
