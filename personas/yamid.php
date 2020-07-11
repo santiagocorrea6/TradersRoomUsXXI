@@ -30,7 +30,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <!-- Estilos CSS -->
-  <link rel="stylesheet" type="text/css" href="css/estilo_lideres.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <link rel="icon" type="imagenes/png" href="../img/icono.png">
 
   <style>
@@ -79,148 +79,44 @@
         <?php }; ?>
 
         <?php if ($_flag == false){ ?>
-          <button class="btn btn-outline-light mx-1 " type="button" data-toggle="modal" data-target="#modal_info1">Iniciar sesión</button>
+          <button class="btn btn-outline-light mx-1 " type="button" onclick="location.href='../index_error.php'">Iniciar sesión</button>
            
-          <button class="btn btn-light mx-1 " onclick="location.href='../registro.php'" type="button">
-         Regístrate</button>
+          <button class="btn btn-light mx-1 " onclick="location.href='../registro.php'" type="button">Regístrate</button>
+        <?php }; ?>
+          </form>
       </div>
     </nav>
   </div>
-
-  <!-- INICIO DE SESION -->
-  <div class="modal fade" id="modal_info1">
-    <div class="container">
-      <div class="d-flex justify-content-center h-100">
-        <div class="card" style="width: 40%">
-          <div class="card-header">
-            <h3>Iniciar sesión</h3>
-            <div class="d-flex justify-content-end social_icon">
-              <span><i class="fab fa-facebook-square"></i></span>
-              <span><i class="fab fa-google-plus-square"></i></span>
-              <span><i class="fab fa-twitter-square"></i></span>
-            </div>
-          </div>
-          <div class="card-body">
-            <form action="../consulta.php" method="POST">
-              <?php
-                if(isset($_GET['error']) && $_GET['error']==true){
-                  print("<h4>Error: Nombre de usuario o contraseña invalidos</h4>");
-                } 
-              ?>
-    
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-user"></i></span>
-              </div>
-    
-                <input type="text" class="form-control" placeholder="usuario" name="nombre">
-            </div>
-                  
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-key"></i></span>
-              </div>
-              
-              <input type="password" class="form-control" placeholder="contraseña" name="contrasena">
-            </div>
-            
-            <div class="row align-items-center remember ml-1">
-              <input type="checkbox">Recordarme
-            </div>
-            
-            <div class="form-group">
-              <input type="submit" value="Iniciar sesión" class="btn float-right login_btn" name="enviar">
-            </div>
-            </form>
-          </div>
-              
-          <div class="card-footer">
-            <div class="d-flex justify-content-center links">
-              ¿No tienes una cuenta?<a href="../registro.php">Regístrate</a>
-            </div>
-          
-            <div class="d-flex justify-content-center">
-              <a href="#">Forgot your password?</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-        <?php }; ?>
-      </div>
-    </nav>   
-  </div>
+        
   
   <!-- PRIMERA IMAGEN -->
   <img class="imagen" src="../img/info1.jpeg" width="100%">
 
-  <div class="container" id="top">
-    <div class="row">
-      <div class="col-lg-1 col-md-0"></div>
-      <div class="col-lg-10 col-md-12" id="verde"><h1>YAMID PRADO</h1></div>
-      <div class="col-lg-1 col-md-0"></div>
-    </div>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-0"></div>
+          
+        <!--Profile Card 3-->
+        <div class="col-lg-4 col-md-7 col-sm-12">
+          <div class="card profile-card-3">
+            <div class="background-block">
+              <img src="../img/fondo1.png" class="background">
+            </div>
 
-    <div class="row">
-      <div class="col-lg-1 col-md-0"></div>
-      
-      <div class="col-lg-4 col-md-5" id="fondoBlanco">
-        <div class="contenedor">
-          <img src="../img/l2.png">
-          <div class="centrado">
-            <div class="row">
-              <div class="col-sm-6" id="der">
-                <br>
-                <p>ROL: <br>EDAD: <br>RANGO: <br>CIUDAD: </p>
-              </div>
-              
-              <div class="col-sm-6" id="izq">
-                <br>
-                <p> Lider<br> 31 años<br> PL 5000<br> Cali - Colombia</p>
-              </div>
+            <div class="profile-thumb-block">
+              <img src="../img/personas/yamid.jpg" alt="profile-image" class="profile"/>
+            </div>
+
+            <div class="card-content">
+              <h2><br>Yamid Prado<small style="text-align: justify;">Hola, soy Yamid Prado de Colombia, y soy cofundador de USXXI, te invito a aprender cómo generar ingresos a través de nuestra metodología única y comprobada que te lleva paso a paso a crear y afianzar los hábitos que te permitirán vivir 100% de internet.</small></h2>
+    
+              <div class="icon-block"><a href="https://www.instagram.com/yamidpro/"><i class="fa fa-instagram"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-facebook"></i></a></div>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="col-lg-6 col-md-7" id="fondoBlanco">
-        <p class="parrafo">Hola, soy Yamid Prado de Colombia, y soy cofundador de USXXI, te invito a aprender cómo generar ingresos a través de nuestra metodología única y comprobada que te lleva paso a paso a crear y afianzar los hábitos que te permitirán vivir 100% de internet.</p>
-
-        <video src="../img/testimonio3.mp4" controls>
-      </div>
-
-      <div class="col-lg-1 col-md-0"></div>
-    </div>
-  </div>
-
-
-  
-  <!-- Abrir ventana emergente -->
-  <script> 
-    function ventanaSecundaria (URL){ 
-      window.open(URL,"ventana1","width=640,height=640,scrollbars=NO") 
-    } 
-  </script>
-
-  <!--Redes Sociales-->
-  <div class="social">
-    <a href="javascript:ventanaSecundaria('https://es-la.facebook.com/FarinaMusic/')">
-      <img src="../img/facebook.png">
-    </a>
-
-    <a href="javascript:ventanaSecundaria('https://es-la.facebook.com/FarinaMusic/')">
-      <img src="../img/instagram.png">
-    </a>
-
-    <a href="javascript:ventanaSecundaria('https://es-la.facebook.com/FarinaMusic/')">
-      <img src="../img/twitter.png">
-    </a>
-
-    <a href="javascript:ventanaSecundaria('https://es-la.facebook.com/FarinaMusic/')">
-      <img src="../img/whatsapp.png">
-    </a>
-  </div>
+    </div>   
+  </section>
 </body>
 </html>

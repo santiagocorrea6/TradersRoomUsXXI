@@ -30,7 +30,7 @@
 
 	} else {
 	
-		$consulta = "INSERT INTO usuarios(name, surname, user, email, pass) VALUES ('$nombre','$apellido', '$user', '$correo','$contrasena')";
+		$consulta = "INSERT INTO usuarios(name, surname, user, email, pass, foto) VALUES ('$nombre','$apellido', '$user', '$correo','$contrasena', 'img/perfil/perfil.png')";
 		mysqli_query($conexion, $consulta);
 
 		session_start();

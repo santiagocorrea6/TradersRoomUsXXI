@@ -15,6 +15,7 @@
   $win = 0; //Operaciones ganadas
   $loss = 0; //Operaciones perdidas
   $numOperaciones = 0;
+  $capitalActual = 0;
 
   while ($columna = mysqli_fetch_array($resultado)) {
     if ($columna['resultado'] == "Ganada") {
@@ -196,43 +197,57 @@
   <div class="container">
     <div class="row">
       <!-- Informacion Personal -->
-      <div class="col-md-4" id="container">
+      <div class="col-md-4 col-sm-12 col-xs-12" id="container">
         <center class="azul">
-          <img src="img/perfil.png" alt="Avatar" class="image" style="width:50%">
+
+          <?php 
+            $conexion = mysqli_connect('localhost','root','','sesion');
+            $sql = "SELECT foto FROM usuarios WHERE user = '$userName'";
+            $result = mysqli_query($conexion,$sql);
+            $result = mysqli_fetch_array($result);
+
+            echo '<img src="'.$result["foto"].'" alt="Avatar" class="image">';
+          ?>
+
+          <!--img src="img/perfil.png" alt="Avatar" class="image" style="width:50%"-->
 
           <h3><?php echo $userName;?></h3>
 
-          <p>Nombre: <?php echo ucfirst($name);?></p>
-          <p>Apellido: <?php echo ucfirst($surname);?></p>
-          <p>Correo: <?php echo $email;?></p>
+          <p id="perfil"><b>Nombre:</b> <?php echo ucfirst($name);?></p>
+          <p id="perfil"><b>Apellido:</b> <?php echo ucfirst($surname);?></p>
+          <p id="perfil"><b>Correo:</b> <?php echo $email;?></p>
         </center>
           
         <div class="middle">
-          <a href=""><div class="text">Editar</div></a>
+          <a data-toggle="modal" data-target="#modal_img"><div class="text">Editar</div></a>
         </div>
       </div>
 
       <!-- Datos sobre capital -->
-      <div class="row col-md-8 media">
+      <div class="row col-md-8 col-sm-12 col-xs-12 media">
         <div class="media col-md-4 gris">
           <div class="media-body">
-            <p class="mt-0 mb-1" id="verde">Capital Inicial</p>
+            <p class="mt-0 mb-1">Capital Inicial</p>
             <h4>$<?php echo $capitalInicial;?></h4>
           </div>
         
           <img src="img/graph.png" class="ml-1" id="icon">
         </div>
 
-        <div class="media col-md-4 verde">
+        <div class="media col-md-4 amarillo">
           <div class="media-body">
-            <p class="mt-0 mb-1" id="verde">Operaciones Totales</p>
+            <p class="mt-0 mb-1">Operaciones</p>
             <h4><?php echo $numOperaciones;?></h4>
           </div>
         
           <img src="img/graph2.png" class="ml-1" id="icon">
         </div>
 
-        <div class="media col-md-4 rojo">
+        <?php if ($capitalActual >= $capitalInicial) { ?>
+          <div class="media col-md-4 verde"> 
+        <?php } else { ?>
+          <div class="media col-md-4 rojo">
+        <?php }  ?>
           <div class="media-body">
             <p class="mt-0 mb-1" id="verde">Capital Actual</p>
             <h4>$<?php echo $capitalActual;?></h4>
@@ -242,7 +257,7 @@
         </div>
 
         <!-- Capital Total-->
-        <div class="card" style="height: 500px; width: 101%; margin-left: -1%; background-color: white; margin-top: 1%;" >
+        <div class="card2">
           <div class="card-header" style="height: 20%;">
             <h4>Resumen de operaciones</h4>
           </div>
@@ -253,180 +268,251 @@
             </blockquote>
           </div>
         </div>
-      </div>          
-        <!--/div-->
-
-        <!--div class="col-md-12" style="width: 100px; height: 100px;">
-          <canvas id="myChart2" width="400" height="400" style="background-color: white"></canvas>
-        </div-->
+      </div>
     </div>
   </div>
 
+  <!-- OPERACIONES -->
   <div class="container container2">
     <div class="row">
-
-    <div class="col-md-4">
-      <div class="card" style="height: 240px; width: 100%; margin-left: 0%; background-color: white; margin-top: -0.5%;" >
+      <div class="col-md-4">
+        <div class="card3">
           <div class="card-header" style="height: 20%;">
             <h4>Operaciones</h4>
           </div>
-          
+            
           <div class="card-body">
             <blockquote class="blockquote mb-1">
               <canvas id="myChart2"></canvas>
             </blockquote>
           </div>
         </div>
-    <!--canvas id="myChart2" width="400" height="400" style="background-color: white"></canvas-->
+      </div>
+    </div>
   </div>
-  </div>
-  
-  </div>
-  
 
+  <!-- TradingView Widget -->
+  <div class="container" id="trading">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+      {
+        "symbols": [
+          {
+            "proName": "FX_IDC:EURUSD",
+            "title": "EUR/USD"
+          },
+          {
+            "description": "EUR/GBP",
+            "proName": "FX_IDC:EURGBP"
+          },
+          {
+            "description": "GBP/USD",
+            "proName": "FX_IDC:GBPUSD"
+          },
+          {
+            "description": "USD/JPY",
+            "proName": "FX_IDC:USDJPY"
+          }
+        ],
+        "colorTheme": "light",
+        "isTransparent": true,
+        "locale": "es"
+      }
+      </script>
+    </div>
+  </div>
+
+</form>
+
+  <div class="modal fade" id="modal_img">
+    <div class="container">
+      <div class="d-flex justify-content-center h-100" style="padding-top: 150px">
+        <div class="card" style="width: 35%; height: 35%;">    
+          <div class="card-header">
+            <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='perfil.php'">&times;</button>
+            <h3>Añadir Imagen</h3>
+          </div>  
+          <div class="card-body" style="margin-top: -5%">
+            <form action="imagenes.php" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <input type="file" class="form-control-file" name="foto">
+              </div>
+                
+              <input type="submit" value="GUARDAR" class="btn float-right login_btn" name="guardar_capital" id="boton_capital">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 </body>
+</html>
 
 <script>
   ctx= document.getElementById("myChart").getContext("2d");
-        var myChart = new Chart(ctx,{
-          type: 'line',
-              data: {
-                //labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                labels: [
-                  <?php
-                    $consulta = "SELECT id FROM $userName";
-                    $resultado = mysqli_query($conexion, $consulta);
+  var myChart = new Chart(ctx,{
+    type: 'line',
+      data: {
+        labels: [
+          <?php
+            $consulta = "SELECT id FROM $userName";
+            $resultado = mysqli_query($conexion, $consulta);
 
-                    while ($columna = mysqli_fetch_array($resultado)) {
-                      echo $columna['id'];
-                      echo ",";
-                    }
-                  ?>
-                ],
-                datasets: [{
-                  borderWidth: 5,
-                  label: 'Inversion',
-                  fill: false,
-                  steppedLine: true,
-                  backgroundColor: ['rgba(66, 134, 244,0.5)'],
-                  borderColor: ['rgba(66, 134, 244,0.5)'],
-                  //data: [9,7,4,6,3,2,1],
-                  data:[
-                    <?php
-                      $consulta = "SELECT inversion FROM $userName";
-                      $resultado = mysqli_query($conexion, $consulta);
+            while ($columna = mysqli_fetch_array($resultado)) {
+              echo $columna['id'];
+              echo ",";
+            }
+          ?>
+        ],
+        
+        datasets: [{
+          borderWidth: 5,
+          label: 'Inversion',
+          fill: false,
+          steppedLine: true,
+          backgroundColor: ['rgba(255, 255, 255,1)'],
+          borderColor: ['rgba(255, 255, 255,1)'],
+          data:[
+            <?php
+              $consulta = "SELECT inversion FROM $userName";
+              $resultado = mysqli_query($conexion, $consulta);
 
-                      while ($columna = mysqli_fetch_array($resultado)) {
-                        echo $columna['inversion'];
-                        echo ",";
-                      }
-                    ?>
-                  ],
-                }, {
-                  label: 'Ganancia',
-                  fill: false,
-                  backgroundColor: ['rgba(0, 0, 0,0.5)'],
-                  borderColor: ['rgba(0, 0, 0,0.5)'],
-                  borderDash: [5, 5],
-                  //data: [1, 2, 3,4,5,6,7],
-                  data:[
-                    <?php
-                      $consulta = "SELECT ganancia FROM $userName";
-                      $resultado = mysqli_query($conexion, $consulta);
-
-                      while ($columna = mysqli_fetch_array($resultado)) {
-                        echo $columna['ganancia'];
-                        echo ",";
-                      }
-                    ?>
-                  ],
-                }, {
-                  label: 'Capital Total',
-                  backgroundColor: ['rgba(200, 134, 244,0.5)'],
-                  borderColor: ['rgba(200, 134, 244,0.5)'],
-
-                  //data: [1,3,4,5,6,6,7],
-                  data:[
-                    <?php
-                      //$consulta = "SELECT capital FROM santiagocorrea54";
-                      $consulta = "SELECT capital FROM $userName";
-                      $resultado = mysqli_query($conexion, $consulta);
-
-                      while ($columna = mysqli_fetch_array($resultado)) {
-                        echo $columna['capital'];
-                        echo ",";
-
-                        $capital = $columna['capital'];
-                      }
-                    ?>
-                  ],
-                  fill: true,
-                }]
-              },
-              options: {
-                responsive: true,
-                tooltips: {
-                  mode: 'index',
-                  intersect: false,
-                },
-                hover: {
-                  mode: 'nearest',
-                  intersect: true
-                },
-                scales: {
-                  xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                      display: true,
-                      labelString: 'OPERACION'
-                    }
-                  }],
-                  yAxes: [{
-                    display: true,
-                    scaleLabel: {
-                      display: true,
-                      labelString: 'USD'
-                    }
-                  }]
-                }
+              while ($columna = mysqli_fetch_array($resultado)) {
+                echo $columna['inversion'];
+                echo ",";
               }
+            ?>
+          ],
+        }, {
+          label: 'Ganancia',
+          fill: false,
+          borderWidth: 5,
+          backgroundColor: ['rgba(105, 105, 105,1)'],
+          borderColor: ['rgba(0, 0, 0,1)'],
+          borderDash: [5, 5],
+          data:[
+            <?php
+              $consulta = "SELECT ganancia FROM $userName";
+              $resultado = mysqli_query($conexion, $consulta);
+
+              while ($columna = mysqli_fetch_array($resultado)) {
+                echo $columna['ganancia'];
+                echo ",";
+              }
+            ?>
+          ],
+        }, {
+          label: 'Capital Total',
+          backgroundColor: ['rgba(255, 248, 0,0.5)'],
+          borderColor: ['rgba(255, 248, 0,1)'],
+          borderWidth: 5,
+          fill: true,
+          data:[
+            <?php
+              $consulta = "SELECT capital FROM $userName";
+              $resultado = mysqli_query($conexion, $consulta);
+
+              while ($columna = mysqli_fetch_array($resultado)) {
+                echo $columna['capital'];
+                echo ",";
+
+                $capital = $columna['capital'];
+              }
+            ?>
+          ],
+        }]
+      },
+      
+      options: {
+        responsive: true,
+        legend: {
+        display: true,
+        labels: {
+          fontColor: 'rgb(255, 255, 255)',
+          fontSize: 14,
+        }
+      },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+        },
+        hover: {
+          mode: 'nearest',
+          intersect: true
+        },
+          scales: {
+            xAxes: [{
+              display: true,
+              gridLines: {
+                display: true,
+                color: 'rgba(255, 255, 255,0.5)'
+              },
+              ticks: {
+                fontColor: 'rgba(255, 255, 255,1)'
+              },
+              scaleLabel: {
+                display: true,
+                fontSize: 18,
+                labelString: 'OPERACION',
+                fontColor: 'rgba(255, 255, 255,1)'
+              }
+            }],
+            yAxes: [{
+              display: true,
+              gridLines: {
+              display: true,
+              color: 'rgba(255, 255, 255,0.5)'
+            },
+            ticks: {
+              fontColor: 'rgba(255, 255, 255,1)'
+            },
+            scaleLabel: {
+              display: true,
+              fontSize: 18,
+              labelString: 'USD',
+              fontColor: 'rgba(255, 255, 255,1)'
+            }
+          }]
+        }
+      }
     });
 
   var ctx= document.getElementById("myChart2").getContext("2d");
-        var myChart = new Chart(ctx,{
-          type: 'doughnut',
-      data: {
-        datasets: [{
-          data: [<?php echo "$win, $loss";?>],
-          backgroundColor: [
-            'rgba(200, 134, 244,0.5)',
-            'rgba(66, 134, 244,0.5)',
-          ],
-          label: 'Dataset 1'
-        }],
-        labels: [
-          'Ganadas',
-          'Perdidas'
-        ]
-      },
-      options: {
-        responsive: true,
-        legend: { labels: {
-                   fontColor: "white",
-                   fontSize: 18
-               }
-        },
-        animation: {
-          animateScale: true,
-          animateRotate: true
+  var myChart = new Chart(ctx,{
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [<?php echo "$win, $loss";?>],
+        backgroundColor: [
+          'rgba(255, 248, 0,1)',
+          'rgba(0, 0, 0,1)',
+        ],
+        label: 'Dataset 1'
+      }],
+      labels: [
+        'Ganadas',
+        'Perdidas'
+      ]
+    },
+    options: {
+      responsive: true,
+      legend: { 
+        position: 'left',
+        labels: {
+          fontColor: "white",
+          fontSize: 14,
+          position: 'left'
         }
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true
       }
     }
-            );
+  });
 </script>
-
-
-</html>
 

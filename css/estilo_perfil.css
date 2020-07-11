@@ -2,15 +2,29 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-	padding-top: 50px;
-height: 100%;
-font-family: 'Numans', sans-serif;
-/*background-color: black;*/
+  padding-top: 50px;
+  height: 100%;
+  font-family: 'Numans', sans-serif;
+  /*background-color: black;*/
 
 }
 
+h3 {
+  font-family: "Latin Modern Roman 10";
+  font-weight: bold; 
+}
+
+h4, p {
+  color: black; 
+}
+
+#perfil {
+  text-align: left !important;
+  padding-left: 5%;
+}
+
 #fondoImagen1{
-  background-image: url('../img/fondo5.jpg');
+  background-image: url('../img/fondo55.jpg');
 }
 
 .container2{
@@ -22,9 +36,9 @@ font-family: 'Numans', sans-serif;
 	position: relative;
 }
 
-.verde{
+.amarillo{
 	margin-top: 2%;
-	background-color: green;
+	background-color: rgba(255, 248, 0,0.7);
 	border-radius: 10px;
 	margin-left: 0.5%;
 	margin-right: 0.5%;
@@ -32,20 +46,36 @@ font-family: 'Numans', sans-serif;
 
 .gris{
 	margin-top: 2%;
-	background-color: grey;
+	background-color: rgba(105, 105, 105,0.7);
 	border-radius: 10px;
 	margin-left: -1%;
 }
 
 .rojo{
 	margin-top: 2%;
-	background-color: red;
+	background-color: rgba(255, 0, 0,0.7);
 	border-radius: 10px;
 }
 
-.azul{
-	background-color: blue;
+.verde{
+  margin-top: 2%;
+  background-color: rgba(0, 255, 0,0.7);
   border-radius: 10px;
+}
+
+.azul{
+	background-color: rgb(82,82,82,0.7) !important;
+  border-radius: 10px;
+}
+
+#trading{
+  width: 81%;
+  position: relative;
+  margin-top: -23%;
+  margin-left: 9%;
+  border-radius: 10px;
+  height: 70px;
+  background-color: rgb(82,82,82,0.7) !important;
 }
 
 #container {
@@ -60,7 +90,8 @@ font-family: 'Numans', sans-serif;
 
   opacity: 1;
   display: block;
-  width: 50%;
+  width: 250px !important;
+  height: 180px !important;
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
@@ -87,10 +118,29 @@ font-family: 'Numans', sans-serif;
 }
 
 .text {
-  background-color: #4CAF50;
-  color: white;
+  color: black;
   font-size: 16px;
   padding: 16px 32px;
+  border-radius: 10px;
+  background-color: rgba(255, 248, 0,1);
+}
+
+.card2{
+  width: 101%;
+  height: 500px;
+  margin-top: 1%;
+  margin-left: -1%;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card3{
+  width: 100%;
+  height: 240px; 
+  margin-left: 0%;  
+  margin-top: auto;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.5) !important;
 }
 
 /*///////////////////////*/
@@ -168,3 +218,116 @@ margin-left: 4px;
 	transform: scale(1.008,1.008);	
 }
 
+/* LG */
+@media screen and (max-width: 1199px){
+  #trading{
+  margin-top: -25%;
+  margin-left: 8.5%;
+  }
+
+  .image{
+    height: 150px !important;
+  }
+
+}
+
+/* MD */
+@media screen and (max-width: 1000px){
+
+  p{
+    font-size: 80%;
+  }
+
+  .text{
+    margin-top: -80%;
+  }
+
+  .card3{
+    margin-top: -30%;
+    height: 150px;
+  }
+
+  .card2{
+    height: 350px;
+  }
+
+  #trading{
+  margin-top: -44%;
+  margin-left: 12%;
+  }
+
+  .image{
+    height: 110px !important;
+  }
+}
+
+/* SM */
+@media screen and (max-width: 767px){
+
+  .azul{
+    position: relative;
+    margin-left: -5%;
+  }
+
+  p {
+    font-size: 100%;
+  }
+
+  .gris{
+    margin-left: 0%;
+  }
+
+  .card2{
+    margin-top: 5%;
+  }
+
+  .card3{
+    margin-top: 113%;
+    margin-left: -4%;
+    height: 350px;
+  }
+
+  #trading{
+  margin-top: 54%;
+  margin-left: 11%;
+  }
+
+  .image{
+    width: 150px !important;
+  }
+  
+}
+
+/* XS */
+@media screen and (max-width: 575px){
+
+  .azul{
+    margin-left: 40%;
+    width: 130%;
+  }
+
+  p {
+    font-size: 100%;
+  }
+
+  .gris, .amarillo, .rojo, .verde, .card2{
+    margin-left: 6%;
+  }
+
+  .card3{
+    margin-top: 130%;
+    margin-left: 0%;
+    height: 350px;
+  }
+
+  .text{
+    width: 100%;
+    margin-left: 100%;
+  }
+
+  #trading{
+  margin-top: 86%;
+  margin-left: 6.4%;
+  }
+
+}
