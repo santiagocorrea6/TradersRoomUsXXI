@@ -166,7 +166,7 @@
                 <img class="img-responsive" src="img/l1.png">
                 <div class="overlay">
                   <h2>Daniela Flores</h2>
-                  <a class="info" href="personas/daniela.php">Más Información</a>
+                  <a class="info" href="personas/user.php?nombre=daniela">Más Información</a>
                 </div>
               </div>
             </div>
@@ -177,7 +177,7 @@
                 <img class="img-responsive" src="img/l2.png">
                 <div class="overlay">
                   <h2>Yamid Prado</h2>
-                  <a class="info" href="personas/yamid.php">Más Información</a>
+                  <a class="info" href="personas/user.php?nombre=yamid">Más Información</a>
                 </div>
               </div>
             </div>
@@ -188,7 +188,7 @@
                 <img class="img-responsive" src="img/l3.png">
                 <div class="overlay">
                   <h2>Nicole Henao</h2>
-                  <a class="info" href="personas/nicole.php">Más Información</a>
+                  <a class="info" href="personas/user.php?nombre=nicole">Más Información</a>
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@
                 <img class="img-responsive" src="img/l4.png">
                 <div class="overlay">
                   <h2>Juan David Mosquera</h2>
-                  <a class="info" href="personas/juandavid.php">Más Información</a>
+                  <a class="info" href="personas/user.php?nombre=david">Más Información</a>
                 </div>
               </div>
             </div>
@@ -212,10 +212,10 @@
             <!-- IMG OVERLAY 2 -->
             <div class="col-lg-4 col-md-6 d-none d-md-block">
               <div class="hovereffect">
-                <img class="img-responsive" src="img/b2.png">
+                <img class="img-responsive" src="img/l5.png">
                 <div class="overlay">
-                  <h2>CAMERA 2</h2>
-                  <a class="info" href="personas/alejandro.php">Más Información</a>
+                  <h2>Alejandra Velasquez</h2>
+                  <a class="info" href="personas/user.php?nombre=alejandra">Más Información</a>
                 </div>
               </div>
             </div>
@@ -226,7 +226,7 @@
                 <img class="img-responsive" src="img/l6.png">
                 <div class="overlay">
                   <h2>Juan Manuel Caicedo</h2>
-                  <a class="info" href="personas/juanmanuel">Más Información</a>
+                  <a class="info" href="personas/user.php?nombre=juan">Más Información</a>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@
                 <img class="img-responsive" src="img/l7.png">
                 <div class="overlay">
                   <h2>Alejandro Bravo</h2>
-                  <a class="info" href="personas/alejandro.php">Más Información</a>
+                  <a class="info" href="personas/user.php?nombre=bravo">Más Información</a>
                 </div>
               </div>
             </div>
@@ -250,10 +250,10 @@
             <!-- IMG OVERLAY 2 -->
             <div class="col-lg-4 col-md-6 d-none d-md-block">
               <div class="hovereffect">
-                <img class="img-responsive" src="img/c2.png">
+                <img class="img-responsive" src="img/l8.png">
                 <div class="overlay">
-                  <h2>TV 2</h2>
-                  <a class="info" href="personas/alejandro.php">Más Información</a>
+                  <h2>Jhon Fredy Guerrero</h2>
+                  <a class="info" href="personas/user.php?nombre=jhon">Más Información</a>
                 </div>
               </div>
             </div>
@@ -264,7 +264,7 @@
                 <img class="img-responsive" src="img/l9.png">
                 <div class="overlay">
                   <h2>Johan Muñoz</h2>
-                  <a class="info" href="personas/johan.php">Más Información</a>
+                  <a class="info" href="personas/user.php?nombre=johan">Más Información</a>
                 </div>
               </div>
             </div>
@@ -308,10 +308,7 @@
 
   <!-- Contenedor 2 -->
   <div class="container-fluid" id="fondoNegro">
-  <br>
-  
-  <h1 id="colorNegro"><center>Don't miss out on great offers and new devices</center></h1>
-  <hr style="border-color:black;">
+  <br><br>
 
   <div class="row">
   <!-- IZQ -->
@@ -320,10 +317,10 @@
         <div class="col-md-12 col-sm-6">
           <div class="hovereffect">
             <center><img class="img-responsive" src="img/p1.png"></center><br>
-            <h6>Work or learn from home with a new laptop starting at $349.99</h6><hr>
+            <h6>¡Hola! Soy Alejandro Bravo, Educador de UsXXI</h6><hr>
             <div class="overlay">
-              <h2>Laptop</h2>
-              <a class="info" href="#">Shop Now</a>
+              <h2>Alejandro Bravo</h2>
+              <a class="info" href="personas/user.php?nombre=bravo">Conócelo</a>
             </div>
           </div>
         </div>
@@ -331,10 +328,10 @@
         <div class="col-md-12 col-sm-6 d-none d-sm-block ">
           <div class="hovereffect">
             <center><img class="img-responsive" src="img/p2.png"></center><br>
-            <h6>Game, watch, and stream with QLED Smart TVs starting at $499.99</h6><hr>
+            <h6>¡Hola! Soy Jairo Betancourt, Educador de UsXXI</h6><hr>
             <div class="overlay">
-              <h2>TV QLED</h2>
-              <a class="info" href="#">Shop Now</a>
+              <h2>Jairo Betancourt</h2>
+              <a class="info" href="personas/user.php?nombre=jairo">Conócelo</a>
             </div>
           </div>
         </div>
@@ -345,11 +342,11 @@
     <!-- CNT-->
     <div class="col-lg-6 col-md-4">
       <div class="hovereffect">
-        <center><img class="img-responsive" src="img/e.jpg"></center><br><br>
-        <h5>INTRODUCING 2020 QLED.</h5>
+        <center><img class="img-responsive" src="img/p.png"></center><br><br>
+        <h5>¡Hola! Soy Jhan Carlos Valencia, <br>Educador de IM ACADEMY & UsXXI,</h5>
         <div class="overlay">
-          <h2>Galaxy Tab</h2>
-          <a class="info" href="#">Shop Now</a>
+          <h2>Carlos Valencia</h2>
+          <a class="info" href="personas/user.php?nombre=carlos">Conócelo</a>
         </div>
       </div>
     </div>
@@ -360,10 +357,10 @@
         <div class="col-md-12 col-sm-6">
           <div class="hovereffect">
             <center><img class="img-responsive" src="img/p3.png"></center><br>
-            <h6>Unlocked Galaxy Tab S6 from $449.99 with elegible trade in</h6><hr>
+            <h6>¡Hola! Soy Alejandro Galvez, Educador de UsXXI,</h6><hr>
             <div class="overlay">
-              <h2>Laptop</h2>
-              <a class="info" href="#">Shop Now</a>
+              <h2>Alejandro Galvez</h2>
+              <a class="info" href="personas/user.php?nombre=alejandro">Conócelo</a>
             </div>
           </div>
         </div>
@@ -371,21 +368,21 @@
         <div class="col-md-12 col-sm-6 d-none d-sm-block ">
           <div class="hovereffect">
             <center><img class="img-responsive" src="img/p4.png"></center><br>
-            <h6>Take the hassle out of laundry and save up to 35% on washers</h6><hr>
+            <h6>¡Hola! Soy Danis Jaiver Bravo, Educador de UsXXI </h6><hr>
             <div class="overlay">
-              <h2>Washing Machine</h2>
-              <a class="info" href="#">Shop Now</a>
+              <h2>Danis Bravo</h2>
+              <a class="info" href="personas/user.php?nombre=danis">Conócelo</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div><br><br><br>    
+  </div><br>
   </div>
 
   <!-- Container 3 -->
   <div class="container-fluid" id="fondoImagen2">
-    <br><br><br>
+    <br><br>
     <div class="row">
       <div class="col-md-4 col-sm-12">
         <video src="img/testimonio1.mp4" width=768  height=512 controls class="img-fluid">
@@ -396,14 +393,14 @@
         <p align="justify">Hola, Mi nombre es Daniel Andrés Coral, soy de la ciudad de Cali y hace aproximadamente un año que pertenezco a este sistema educativo llamado UsXXI, a lo largo de mi vida siempre había buscado un modelo que me permitiera aprender acerca los mercados financieros…</p>
 
         <center>
-          <button class="btn btn-dark b1" onclick="window.location.href='personas/daniel.php'">Seguir Leyendo</button>
+          <button class="btn btn-dark" onclick="window.location.href='personas/user.php?nombre=daniela'">Seguir Leyendo</button>
         </center>
 
         <hr class="d-sm-block d-md-none" style="border-color: #212529">
       </div>
 
       <div class="col-md-4 col-sm-12">
-        <video src="img/testimonio2.mp4" width=768  height=512 controls class="img-fluid">
+        <video src="img/testimonio2.mp4" width=768  height=512 controls class="img-fluid" poster="img/prev.png">
         Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
         La versión descargable está disponible en <a href="URL">Enlace</a>. 
         </video>
@@ -411,7 +408,7 @@
         <p align="justify">Hola, Soy Juan David Mosquera Lozano, Tengo 26 años de edad y hace aproximadamente 2 años decidí implementar la metodología UsXXI para tomar el control de mi vida financiera y así poderle dar tiempo de calidad a mis seres queridos especialmente a mi hija...</p>
 
         <center>
-          <button class="btn btn-dark b1" onclick="window.location.href='personas/juandavid.php'">Seguir Leyendo</button>
+          <button class="btn btn-dark" onclick="window.location.href='personas/user.php?nombre=david'">Seguir Leyendo</button>
         </center>
 
         <hr class="d-sm-block d-md-none" style="border-color: #212529">
@@ -426,12 +423,51 @@
         <p align="justify">Hola, soy Yamid Prado de Colombia, y soy cofundador de USXXI, te invito a aprender cómo generar ingresos en el s.XXI a través de nuestra metodología única y comprobada que te lleva paso a paso a crear y afianzar los hábitos que te permitirán vivir 100% de internet...</p>
         
         <center>
-          <button class="btn btn-dark b1" onclick="window.location.href='personas/yamid.php'">Seguir Leyendo</button>
+          <button class="btn btn-dark" onclick="window.location.href='personas/user.php?nombre=yamid'">Seguir Leyendo</button>
         </center>
 
       </div>
-    </div><br>
+    </div><br><br>
   </div>
+
+  <!---  Footer --->
+  <footer class="page-footer font-small pt-4" style="background-color: yellow; margin-top: -1%;">
+
+    <div class="container">
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="home.php"> tradersroom.com</a>
+    </div>
+  </footer>
 
 
 </body>

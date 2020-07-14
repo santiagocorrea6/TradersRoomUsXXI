@@ -1,0 +1,264 @@
+*{
+	box-sizing: border-box;
+	/*border:1px solid;*/
+	
+}
+
+
+.img-principal{
+  	background-attachment: fixed;
+  	transition: 3s;
+	width: 100%;
+	padding-top: 20px
+	opacity: 0.5;
+	
+}
+
+.capa{
+	position: absolute;
+	top: 220px;
+	right: 110px;
+	left: 650px;
+}
+.capa h3{
+	font-size: 50px;
+	font-family: "Hurme Geometric Sans 1 regular";
+	font-weight: bold;
+	color: black;
+	
+}
+.capa p{
+	margin-top: 20px;
+	font-size: 30px;
+	font-family:"Hurme Geometric Sans 1 regular";
+	text-align: justify;
+	color: white;
+	margin-left: 1px;
+}
+
+
+
+.bt{
+	padding: 5px;
+	background: #FFF800;
+	border-left-color: #FFF800;
+	color:black;
+}
+.bt:hover{
+	background:black;
+	color: white;
+
+}
+
+.izquierda{
+	width: 100%;
+	background:#000000;
+}
+
+.izquierda h3{
+	padding-top: 20px;
+	margin-left: 60px;
+	margin-right: 30px;
+	font-family: "Hurme Geometric Sans 1 black";
+	font-weight: bold;
+	font-size: 30px;
+	color: white;
+	font-style: italic;
+}
+.izquierda p{
+	padding-top: 10px;
+	margin-left: 60px;
+	margin-right: 50px;
+	text-align:justify;
+	font-family: "Hurme Geometric Sans 1 regular";
+	font-size: 25px;
+	color: white;
+	font-style: inherit;
+}
+.izquierda embed{
+	width: 10%;
+	text-align: center;
+}
+.derecha{
+	width: 100%;
+	background: black;
+}
+.video-fluid {
+  width: 100%;
+  height: auto;
+}
+
+#titulo-corto{
+	padding-top: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size: 40px;
+	font-family: "Hurme Geometric Sans 1 black";
+	font-weight: bold;
+	color: black;
+
+}
+
+.izq{
+	padding-top: 30px;
+	background: white;
+
+}
+.izq h3,p {
+	margin-right: 40px;
+	margin-left: 40px;
+	font-family:"Hurme Geometric Sans 1 regular"
+	color:black; 
+}
+
+.cent{
+	padding-top: 30px;
+	background: black;
+	color: white;
+}
+
+.cent h3,p {
+	margin-right: 0px;
+	margin-left: 40px;
+	font-family:"Hurme Geometric Sans 1 regular"
+	color:white; 
+}
+
+.dere{
+	padding-top: 30px;
+	background: #FFF800;
+}
+
+.dere h3,p {
+	margin-right: 40px;
+	margin-left: 40px;
+	font-family:"Hurme Geometric Sans 1 regular"
+	color:black; 
+}
+
+.imgTLI{
+	width: 200px;
+	padding-left: 35px;
+	display: ;
+	margin: auto;
+
+}
+
+.img-trespasos{
+	width: 100%;
+}
+.capa2{
+	position: absolute;
+	top: 1800px;
+	left: 50px;
+	/*right: 110px;*/
+	
+}
+.capa2 .img-ilovetrading{
+	width: 40%;
+	padding-top: 30px;
+
+}
+.capa2 p {
+	margin-top: 20px;
+	font-size: 30px;
+	font-family:"Hurme Geometric Sans 1 regular";
+	text-align: justify;
+	color: white;
+	margin-left: 1px;
+}
+.capa2 h3{
+	font-size: 50px;
+	font-family: "Hurme Geometric Sans 1 black";
+	font-weight: bold;
+	color: #FFF800;
+	
+}
+#cap2_peq{
+	font-size: 20px;
+	font-family: "Hurme Geometric Sans 1 regular";
+}
+
+#spa1{
+	font-family: "Hurme Geometric Sans 1 black";
+}
+#spa2{
+	color: #FFF800;
+}
+
+.pasos{
+	background: black;
+}
+.pasos_col{
+	background: ;
+	margin-right: 10px;
+	margin-right: 0px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.pasos_col h3{
+
+	font-size: 30px;
+	font-family: "Hurme Geometric Sans 1 black";
+	font-weight: bold;
+	color: #FFF800;
+}
+.pasos_col p{
+	margin-top: 10px;
+	font-size: 15px;
+	font-family:"Hurme Geometric Sans 1 regular";
+	text-align: justify;
+	color: white;
+	margin-left: 1px;
+}
+
+
+
+
+
+@media only screen and (min-width: 328px) and (max-width:1100px){
+	.capa{
+		width: 75%;
+		/*right: 500px;*/
+		left: 50px;
+		top: 100px;	
+	}
+	.capa h3{
+		font-size: 30px;
+	}
+	.capa p{
+		margin-top: 10px;
+		font-size: 17px;
+		right: 50px;
+	}
+
+	.capa2{
+	position: absolute;
+	top: 2090px;
+	left: 20px;
+	/*right: 110px;*/
+	
+	}
+	.capa2 p {
+		margin-top: 2px;
+		font-size: 12px;
+		font-family:"Hurme Geometric Sans 1 regular";
+		text-align: justify;
+		color: white;
+		margin-left: 1px;
+	}
+	.capa2 h3{
+		margin-top: 2px;
+		font-size: 14px;
+		font-family: "Hurme Geometric Sans 1 black";
+		font-weight: bold;
+		color: #FFF800;
+		
+	}
+	#cap2_peq{
+		font-size: 12px;
+		font-family: "Hurme Geometric Sans 1 regular";
+	}
+	
+}
+

@@ -1,0 +1,129 @@
+*{
+	box-sizing: border-box;
+	/*border:1px solid;*/
+}
+
+.img-prin{
+	width: 100%;
+	padding-top: 40px
+}
+.img-prin:hover{
+	transform: scale(1.25,1.25);
+}
+
+.contenedor-hor{
+	background-color: black;
+
+}
+.titulos-hor{
+	background-color: #FFF800;
+	font-family: "Hurme Geometric Sans 1 regular";
+	font-weight: bold;
+	text-align: center;
+	color: black;
+}
+
+.btn{
+	width;
+
+}
+.img-par{
+	width:30%;
+
+}
+.par-prin{
+	background-color: black;
+	width: 100%;
+}
+.tradingV{
+
+	background-color: black;
+
+}
+
+.divisas{
+	padding-top: 20px;
+	font-family: "Hurme Geometric Sans 1 regular";
+	font-weight: bold;
+	font-size: 3vw;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #d4b202;
+}
+
+.cal-eco{
+	background: black;
+}
+
+.cal-eco h3{
+	text-align: center;
+	font-size: 2.8vw;
+	color: #FFF800;;
+	font-family:"Hurme Geometric Sans 1 regular";
+	font-weight: bold;
+	padding-top: 20px;
+	margin-bottom: 10px; 
+}
+
+#hr-cal{
+	background-color:  #FFF800;
+}
+.colu-ama{
+	background-color: #FFF800;
+
+
+}
+
+
+#traders-h3{
+	color: #FFF800;
+	padding-top: 104px;
+	padding-bottom: 104px;
+	font-family: "Hurme Geometric Sans 1 black";
+	font-size: 2vw;
+	text-align: center;
+	transition: 2s;
+
+
+}
+
+#room-h3{
+	color: white;
+	padding-top: 104px;
+	padding-bottom: 104px;
+	font-family: "Hurme Geometric Sans 1 black";
+	transition: 2s;
+
+}
+
+#traders-h3:hover{
+	font-size: 2.5vw;
+}
+
+.unisxxi{
+	color: white;
+	font-family: "Hurme Geometric Sans 1 regular";
+	font-weight: 20px;
+	padding-top: 20px;
+	text-align: center;
+
+}
+.unisxxi1{
+	color: #FFF800;
+}
+.unisxxi2{
+	font-family: "Hurme Geometric Sans 1 black";
+}
+.unisxxi3{
+
+	font-family: "Hurme Geometric Sans 1 regular";
+	font-size: 17px;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	text-align: justify;
+
+}
+

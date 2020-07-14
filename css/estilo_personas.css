@@ -15,6 +15,10 @@ body{
   background-image: url('../img/fondo1.jpg');
 }
 
+#fondoImagen2{
+  background-image: url('../img/fondo133.jpg');
+}
+
 #colorNegro, .colorNegro{
   color: black;
 }
@@ -32,7 +36,8 @@ body{
 }
 
 #fondoAmarillo, .fondoAmarillo{
-  background-color: #FFF800;
+  /*background-color: #FFF800;*/
+  background-color: black;
 }
 
 .izq{

@@ -90,7 +90,7 @@ h4, p {
 
   opacity: 1;
   display: block;
-  width: 250px !important;
+  width: 180px !important;
   height: 180px !important;
   height: auto;
   transition: .5s ease;
@@ -225,9 +225,14 @@ margin-left: 4px;
   margin-left: 8.5%;
   }
 
-  .image{
-    height: 150px !important;
+  .card3{
+    margin-top: 10%;
+    height: 217px;
   }
+
+  /*.image{
+    height: 150px !important;
+  }*/
 
 }
 
@@ -243,22 +248,22 @@ margin-left: 4px;
   }
 
   .card3{
-    margin-top: -30%;
+    margin-top: 3%;
     height: 150px;
   }
 
   .card2{
-    height: 350px;
+    height: 420px;
   }
 
   #trading{
-  margin-top: -44%;
+  margin-top: -40%;
   margin-left: 12%;
   }
 
-  .image{
+  /*.image{
     height: 110px !important;
-  }
+  }*/
 }
 
 /* SM */
@@ -279,22 +284,23 @@ margin-left: 4px;
 
   .card2{
     margin-top: 5%;
-  }
-
-  .card3{
-    margin-top: 113%;
-    margin-left: -4%;
     height: 350px;
   }
 
-  #trading{
-  margin-top: 54%;
-  margin-left: 11%;
+  .card3{
+    margin-top: 126%;
+    margin-left: -4%;
+    height: 330px;
   }
 
-  .image{
-    width: 150px !important;
+  #trading{
+  margin-top: 63%;
+  margin-left: 9%;
   }
+
+  /*.image{
+    width: 150px !important;
+  }*/
   
 }
 
@@ -310,12 +316,16 @@ margin-left: 4px;
     font-size: 100%;
   }
 
-  .gris, .amarillo, .rojo, .verde, .card2{
+  .gris, .amarillo, .rojo, .verde{
     margin-left: 6%;
   }
 
+  .card2{
+    margin-left: 5%;
+  }
+
   .card3{
-    margin-top: 130%;
+    margin-top: 145%;
     margin-left: 0%;
     height: 350px;
   }
@@ -326,8 +336,8 @@ margin-left: 4px;
   }
 
   #trading{
-  margin-top: 86%;
-  margin-left: 6.4%;
+  margin-top: 102%;
+  margin-left: 7%;
   }
 
 }
