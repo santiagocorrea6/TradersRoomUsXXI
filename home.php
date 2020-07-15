@@ -153,7 +153,7 @@
           <h3>Certifícate</h3>
           <p>Inicia con nuestro programa de arranque rápido y certifícate en básicos en tus primeras 72 horas y obtén tu diploma oficial de UniversidadsXXI</p>
           <video class="video-fluid z-depth-1" autoplay loop controls muted>
-            <source src="videos/coral.mp4" type="video/mp4" />
+            <source src="videos/tatiana.mp4" type="video/mp4" />
           </video> 
         </div>        
       </div>
@@ -175,7 +175,7 @@
           <h3>Opera mientras aprendes</h3>
           <p>Elige 1 a 2 de nuestras 12 herramientas profesionales y más de 30 estrategias de expertos y copia y pega en tu cuenta de práctica mientras aprendes.</p>
           <video class="video-fluid z-depth-1" autoplay loop controls muted>
-            <source src="videos/coral.mp4" type="video/mp4" />
+            <source src="videos/karen.mp4" type="video/mp4" />
           </video>
         </div>       
       </div>  
