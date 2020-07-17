@@ -76,6 +76,7 @@
           <div class="card-header">
 
             <h3>Iniciar sesión</h3>
+            <button type="button" class="close text-light" data-dismiss="modal" onclick="window.location.href='index.php'" style="margin-top: -20px;">&times;</button>
             <div class="d-flex justify-content-end social_icon">
               <span><i class="fab fa-facebook-square"></i></span>
               <span><i class="fab fa-google-plus-square"></i></span>
@@ -114,11 +115,10 @@
               
           <div class="card-footer">
             <div class="d-flex justify-content-center links">
-              ¿No tienes una cuenta?<a href="registro.php">Regístrate</a>
+              <p>¿No tienes una cuenta?</p><br>
             </div>
-
-            <div class="d-flex justify-content-center">
-              <a href="#">Forgot your password?</a>
+            <div class="d-flex justify-content-center links" id="amarillo">
+              <a href="registro.php">Regístrate</a>
             </div>
           </div>
         </div>

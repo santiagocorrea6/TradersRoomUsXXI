@@ -74,6 +74,19 @@
 
 }
 
+.login_btn{
+	width: 140px !important;
+}
+
+.login_btn:hover{
+	width: 140px !important;
+}
+
+.links a{
+	color: #FFF800 !important;
+}
+
+
 
 #traders-h3{
 	color: #FFF800;

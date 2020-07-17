@@ -124,11 +124,10 @@
               
         <div class="card-footer">
           <div class="d-flex justify-content-center links">
-            ¿No tienes una cuenta?<a href="registro.php">Regístrate</a>
+            <p>¿No tienes una cuenta?</p><br>
           </div>
-
-          <div class="d-flex justify-content-center">
-            <a href="#">Forgot your password?</a>
+          <div class="d-flex justify-content-center links" id="amarillo">
+            <a href="registro.php">Regístrate</a>
           </div>
         </div>
       </div>

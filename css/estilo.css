@@ -64,18 +64,20 @@ margin-right: 5px;
 }
 
 .login_btn{
-color: black;
-background-color: #FFF800;
-width: 120px;
+	color: black;
+	background-color: #FFF800;
+	width: 140px !important;
 }
 
 .login_btn:hover{
-color: black;
-background-color: white;
+	color: black;
+	background-color: white;
+	width: 140px !important;
 }
 
 .links a{
-margin-left: 4px;
+	margin-left: 4px;
+	color: #FFF800 !important;
 }
 
 .img-fluid:hover{
