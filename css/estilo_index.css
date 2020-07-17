@@ -35,8 +35,6 @@
 	margin-left: 1px;
 }
 
-
-
 .bt{
 	padding: 5px;
 	background: #FFF800;
@@ -211,6 +209,10 @@
 	margin-left: 1px;
 }
 
+.hola{
+	margin-top: -24px;
+}
+
 .login_btn{
 	width: 140px !important;
 }
@@ -246,7 +248,7 @@
 
 	.capa2{
 	position: absolute;
-	top: 2090px;
+	top: 2190px;
 	left: 20px;
 	/*right: 110px;*/
 	

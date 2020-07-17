@@ -163,7 +163,7 @@
           <h3>Paso 2: </h3>
           <h3>Aprende de expertos</h3>
           <p>Calendariza con un entrenador UsXXI 4 a 6 horas a la semana  y conéctate con expertos las horas que quiereas en vivo.</p><br>
-          <video class="video-fluid z-depth-1" autoplay loop controls muted>
+          <video class="video-fluid z-depth-1 hola" autoplay loop controls muted>
             <source src="videos/coral.mp4" type="video/mp4" />
           </video>
         </div>   
